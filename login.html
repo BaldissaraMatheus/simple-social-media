@@ -2,6 +2,7 @@
 
 <head>
     <title>Login</title>
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="shortcut icon" href="img/favicon.ico" />
 </head>
@@ -9,29 +10,21 @@
 <body>
     <div class="outer">
         <div class="inner">
-            <div class="left-container child">
-                <p>
-                    <h1 class="h1-main-container">Mais de um bilhão</h1>
-                    <h1 class="h1-main-container"> de usuários já cadastrados</h1>
-                </p>
+            <h1 class="container h1-main-container left">Mais de um bilhão de usuários já cadastrados</h1>
+            <div class="container-wrapper">
+                <div class="container main-container">
+                    <img src="img/logo.png" class="logo">
+                    <form action="index.html" method="POST">
+                        <input type="email" name="Email" placeholder="Email">
+                        <input type="password" name="Senha" placeholder="Senha">
+                        <a class='block mt-5' href="esqueceu-senha.html">Esqueci minha senha</a>
+                        <a class='block mt-5' href="cadastro.html">Crie uma conta</a>
+                        <input type="submit" value="Entrar" class="button">
+                    </form>
+                </div>   
             </div>
-            <div class="main-container child">
-                <img src="img/logo.png" class="logo">
-                <form action="index.html" method="POST">
-                    <p><input type="email" name="Email" placeholder="Email"></p>
-                    <input type="password" name="Senha" placeholder="Senha">
-                    <p><span><a href="esqueceu-senha.html">Esqueci minha senha</a></span></p>
-                    <p><span><a href="cadastro.html">Crie uma conta</a></span></p>
-                    <input type="submit" value="Entrar" class="button">
-                </form>
-            </div>
-            <div class="right-container child">
-                <span>
-                    <h1 class="h1-main-container">Acesse ou crie uma conta hoje!</h1>
-                </span>
-            </div>
+            <h1 class="container h1-main-container right">Acesse ou crie uma conta hoje!</h1>
         </div>
-        <div class="push"></div>
     </div>
 </body>
 

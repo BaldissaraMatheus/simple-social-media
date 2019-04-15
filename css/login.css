@@ -1,40 +1,68 @@
-* {
-    box-sizing:border-box;
-    margin:2px;
-}
-  
-body {    
-    background: #16202a;   
-    padding:10px;
+@media only screen and (max-width: 1400px) {
+
+    body {
+        width: 100vw;
+    }
+
+    .inner {
+        flex-direction: column;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    .main-container {
+        margin-left: auto;
+    }
+
 }
 
-.logo{
+html {
+    /* background: white; */
+}
+
+body {    
+    background: #16202a;
+    margin: auto;
+    padding:10px;
+    max-width: 100vw;
+    width: 1400px;
+}
+
+p, h1, a {
+    font-family: 'Roboto', sans-serif;
+}
+
+input {
+    margin-bottom: 200px;
+}
+
+.block {
+    display: block;
+}
+
+.mt-5 {
+    margin-top: 5px;
+}
+
+.logo {
     height: 150px;
     width: 150px;
     margin-bottom: 10px;
 }
 
+h1 {
+    font-size: 50px;
+}
+
 .h1-main-container{
     color: white;
-    font-size: 50px;
-    font-family: 'Roboto', sans-serif;
 }
 
-.left-container{
-    text-align: left;
+.container {
+    display: block;
     width: 500px;
-}
-
-.outer{
-    overflow: hidden;
-}
-
-.inner{
-    overflow: hidden;
-}
-
-.child{
-    float:left;
 }
 
 .main-container {
@@ -44,29 +72,36 @@ body {
     font-weight: bold;
     background:#5372ac;
     border: 2px solid #6c95e2;
-    border-radius: 3%;
-    display:inline-block;    
+    border-radius: 3%;    
     padding:30px;
     width: 270px;
 }
 
-.right-container {
-    position: relative;
-    height: 415px;
-    width: 300px;
+.left {
+    text-align: left;
 }
 
-.right-container span{
-    position: absolute;
-    bottom: 0px;
-    width: 400px;
+.right {
     text-align: right;
- }
+}
 
+.outer{
+    /* overflow: hidden; */
+}
+
+.inner{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+/*
 .outer{
     padding: 70px 0;
     text-align: center;
 }
+*/
 
 .button {
     background-color: #4f98c9;
@@ -109,26 +144,26 @@ input:focus{
     border: 2px solid #63a4cf;
 }
 
-a{
+a {
   display: inline-block;
   height: 1em;
 }
 
-p span{
+p span {
     display: block;
     margin: 5px 0;    
 }
 
-a:link{
+a:link {
     text-decoration: none;
     font-size: 13px;
     color: white;
 }
 
-a:hover{
+a:hover {
     text-decoration: underline;
 }
 
-a:visited{
+a:visited {
     color: white;
 }
