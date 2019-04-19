@@ -20,12 +20,11 @@ body{
     background-color: #15202b;
 }
 
-.mainbody{
+.mainbody {
     width: 1024px;
     height: auto;
     margin: 10px auto 10px auto;
     overflow: hidden;
-    background-color: 
 }
 
 .col1{
