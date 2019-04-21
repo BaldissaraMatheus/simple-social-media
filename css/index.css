@@ -1,49 +1,65 @@
-body{
-    margin: 0px;
-    padding: 0px;    
-    background-color: #15202b;
-    font-family: "Segoe UI",Arial,sans-serif;
-    color: #fff;
+@media only screen and (min-width: 1400px) {
+    .user-box {
+        width: 400px;
+    }
+
+    .dashboard {
+        width: 100%;
+    }
+}
+
+body { 
+    font-family: "Segoe UI", Arial, sans-serif;
     line-height: 20px;
 }
 
-.wrapper{
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.navbar{
+/* .navbar {
     width: 100%;
     height: 60px;
     overflow: hidden;
     background-color: #15202b;
+} */
+
+.user-box {
+    display: block;
+    height: 150px;
+    background-color: #15202b;
+    border: 1px solid #5372ac;
 }
 
-.mainbody {
-    width: 1024px;
-    height: auto;
-    margin: 10px auto 10px auto;
-    overflow: hidden;
+.user-box > * {
+    display: inline-block;
+    padding: 20px;
 }
 
-.col1{
-    width: 23%;
-    float: left;
-    height: 300px;
+.user-box > .user-icon {
+    margin-right: 10px;
 }
 
-.col2{
-    width: 50%;
-    margin-left: 2%;
-    float: left;
-    height: 300px;
-    background-color: tomato;
+.user-box > .user-icon > img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%
 }
 
-.col3{
-    width: 23%;
-    float: right;
-    height: 300px;
-    background-color: purple;
+.user-box > .user-info {
+    position: absolute;
+    top: 50px;
+}
+
+.user-box > .user-info > .user-nick {
+    margin: 0;
+    color: #bdc3c7;
+}
+
+.user-box > .user-info > .user-name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+.dashboard {
+    min-height: 400px;
+    background-color: #15202b;
+    border: 1px solid #5372ac;
 }
