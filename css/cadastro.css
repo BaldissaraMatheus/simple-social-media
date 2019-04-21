@@ -1,40 +1,48 @@
-html{
-  overflow-y: auto
+.main-container{
+  width:100%;
+  max-width: 1000px;
 }
 
-body{    
-    background: #16202a; 
+input {
+  margin-bottom: 20px;
 }
 
-h2{
-  color: white;
-  font-size: 20px;
-  font-family: 'Roboto', sans-serif;
+.avatares {
+  width: 100%;
+  max-width: 350px;
 }
 
-.container-principal{
-    width:500px; 
-    height:400px; 
-    position: fixed; 
-    top: 50%; 
-    left: 30%;
-    margin-top: -200px; 
-    margin-left: -250px;
+.avatares > [type=radio] { 
+  position: absolute;
+  width: 0;
+  height: 0;
 }
-
-[type=radio] { 
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
   
-  /* IMAGE STYLES */
-  [type=radio] + img {
-    cursor: pointer;
-  }
-  
-  /* CHECKED STYLES */
-  [type=radio]:checked + img {
-    outline: 2px solid #f00;
-  }
+.avatares > [type=radio] + label {
+  display: inline-block;
+  cursor: pointer;
+  display: inline-block;
+  width: 49%;
+  height: 150px;
+  background-size: cover;
+}
+
+.avatares > [type=radio] + .katara {
+  background-image: url('../img/katara.png');
+}
+
+.avatares > [type=radio] + .aang {
+  background-image: url('../img/aang.png');
+}
+
+.avatares > [type=radio] + .toph {
+  background-image: url('../img/toph.png');
+}
+
+.avatares > [type=radio] + .zuko {
+  background-image: url('../img/zuko.png');
+}
+
+.avatares > [type=radio]:checked + label {
+  outline: 2px solid #4f98c9;
+}

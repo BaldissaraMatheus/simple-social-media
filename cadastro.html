@@ -3,45 +3,37 @@
 <head>
     <title>Cadastre-se</title>
     <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/shared.css">
     <link rel="stylesheet" href="css/cadastro.css">
-    <link rel="stylesheet" href="css/esqueceu-senha.css">
-    <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>
-    <div class="container-principal">
-        <h1 class="h1-menu">Faça seu cadastro!</h1>
+    <main class="container main-container">
+        <h1>Faça seu cadastro!</h1>
         <form action="" method="POST">
-            <br>
-            <p><input type="email" name="Email" placeholder="Email"></p>
-            <p><input type="text" name="Nome completo" placeholder="Nome completo"></p>
-            <p><input type="text" name="Nome de usuário" placeholder="Nome de usuário"></p>
-            <p><input type="password" name="Senha" placeholder="Senha"></p>
+            <input type="email" name="Email" placeholder="Email">
+            <input type="text" name="Nome completo" placeholder="Nome completo">
+            <input type="text" name="Nome de usuário" placeholder="Nome de usuário">
+            <input type="password" name="Senha" placeholder="Senha">
+
             <h2>Escolha seu avatar:</h2>
-            <br>
-            <label>
-                <input type="radio" name="test" value="small" checked>
-                <img src="img/katara.png">
-            </label>
+            <div class="container avatares">  
+                <input type="radio" name="radio" id="katara" checked>
+                <label for="katara" class="katara"></label>
 
-            <label>
-                <input type="radio" name="test" value="big">
-                <img src="img/aang.png">
-            </label>
-            <br>
-            <label>
-                <input type="radio" name="test" value="small" checked>
-                <img src="img/zuko.png">
-            </label>
+                <input type="radio" name="radio" id="aang">
+                <label for="aang" class="aang"></label>
 
-            <label>
-                <input type="radio" name="test" value="big">
-                <img src="img/toph.png">
-            </label>
-            <br>
+                <input type="radio" name="radio" id="toph" checked>
+                <label for="toph" class="toph"></label>
+
+                <input type="radio" name="radio" id="zuko">
+                <label for="zuko" class="zuko"></label>
+            </div>
             <input type="submit" value="Confirmar" class="button">
         </form>
-    </div>
+    </main>
 </body>
 
 </html>
