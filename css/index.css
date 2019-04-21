@@ -1,6 +1,6 @@
 @media only screen and (min-width: 1400px) {
     .user-box {
-        width: 400px;
+        width: 450px;
     }
 
     .dashboard {
@@ -22,29 +22,29 @@ body {
 
 .user-box {
     display: block;
-    height: 150px;
+    height: 130px;
     background-color: #15202b;
     border: 1px solid #5372ac;
 }
 
 .user-box > * {
     display: inline-block;
-    padding: 20px;
+    padding: 0;
 }
 
 .user-box > .user-icon {
-    margin-right: 10px;
+    margin: 15px 20px 0 15px;
 }
 
 .user-box > .user-icon > img {
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%
 }
 
 .user-box > .user-info {
     position: absolute;
-    top: 50px;
+    top: 55px;
 }
 
 .user-box > .user-info > .user-nick {
@@ -53,7 +53,7 @@ body {
 }
 
 .user-box > .user-info > .user-name {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
     margin: 0 0 10px 0;
 }
