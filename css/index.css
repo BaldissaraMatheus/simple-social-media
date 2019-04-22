@@ -27,6 +27,25 @@ body {
     border: 1px solid #5372ac;
 }
 
+.user-icon {
+    border-radius: 50%;
+    background-image: url('../img/aang.png');
+    background-size: cover;
+}
+
+.user-info {
+    margin: 0 0 10px 0;
+}
+
+.user-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.user-nick {
+    color: #bdc3c7;   
+}
+
 .user-box > * {
     display: inline-block;
     padding: 0;
@@ -34,12 +53,8 @@ body {
 
 .user-box > .user-icon {
     margin: 15px 20px 0 15px;
-}
-
-.user-box > .user-icon > img {
     width: 75px;
     height: 75px;
-    border-radius: 50%
 }
 
 .user-box > .user-info {
@@ -47,19 +62,27 @@ body {
     top: 55px;
 }
 
-.user-box > .user-info > .user-nick {
-    margin: 0;
-    color: #bdc3c7;
-}
-
-.user-box > .user-info > .user-name {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin: 0 0 10px 0;
-}
-
 .dashboard {
-    min-height: 400px;
+    height: auto;
     background-color: #15202b;
     border: 1px solid #5372ac;
+}
+
+.post {
+    width: 100%;
+    min-height: 100px;
+    padding: 20px;
+    border: 1px solid #5372ac;
+}
+
+.post > .user-icon {
+    display: block;
+    float: left;
+    margin-right: 15px;
+    width: 60px;
+    height: 60px;
+}
+
+.post > .user-info > * {
+    display: inline;
 }
