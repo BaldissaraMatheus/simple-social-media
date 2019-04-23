@@ -1,25 +1,9 @@
-const loadTemplates = (parent) => {
-    const items = parent.querySelectorAll('[template]');
-
-    items.forEach(item => {
-
-        const template = item.getAttribute('template');
-
-        fetch(template)
-
-            .then((response) => {
-                return response.text();
-            })
-            .then(content => {
-                item.innerHTML = content;
-
-                loadTemplates(item);
-            })
-    });
+function toggleReplyContainer(el) {
+    const replyContainer = el.parentNode.parentNode.childNodes[5].childNodes[1];
+    replyContainer.classList.toggle('display-none');
 }
 
-const onWindowsLoaded = () => {
-    console.log('windows loaded');
+function toggleIconStyle(el) {
+    el.classList.toggle('far');
+    el.classList.toggle('fas');
 }
-
-window.onload = onWindowsLoaded;

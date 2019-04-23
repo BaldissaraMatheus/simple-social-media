@@ -1,134 +1,22 @@
-* {
-    box-sizing:border-box;
-    margin:2px;
-}
-  
-body {    
-    background: #16202a;   
-    padding:10px;
+@media only screen and (min-width: 1400px) {
+    main {
+        margin-top: 100px;
+    }
 }
 
-.logo{
+.logo {
     height: 150px;
     width: 150px;
     margin-bottom: 10px;
 }
 
-.h1-main-container{
-    color: white;
-    font-size: 50px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.left-container{
-    text-align: left;
-    width: 500px;
-}
-
-.outer{
-    overflow: hidden;
-}
-
-.inner{
-    overflow: hidden;
-}
-
-.child{
-    float:left;
-}
-
-.main-container {
-    color: white;
+.form-container {
     text-align: center;
-    font-family: 'Roboto', sans-serif;
     font-weight: bold;
     background:#5372ac;
-    border: 2px solid #6c95e2;
-    border-radius: 3%;
-    display:inline-block;    
+    border: 2px solid #4f98c9;
+    border-radius: 3%;    
     padding:30px;
     width: 270px;
-}
-
-.right-container {
-    position: relative;
-    height: 415px;
-    width: 300px;
-}
-
-.right-container span{
-    position: absolute;
-    bottom: 0px;
-    width: 400px;
-    text-align: right;
- }
-
-.outer{
-    padding: 70px 0;
-    text-align: center;
-}
-
-.button {
-    background-color: #4f98c9;
-    border: none;
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    padding: 15px 32px;
-    text-align: center;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.4);
-    width: 150px;
-    height: 50px;
-    margin: 5px 0;
-}
-
-.button:hover {
-    background-color: #3c8dc3;
-}
-
-.button:active{
-    background-color: #30719c;
-    box-shadow: 0 0 0 2px #30719c;
-    border: 1px solid white;
-    outline:none;    
-}
-
-input {
-    width: 200px;
-    padding: 5px 10px;
-    margin: 1px 0;
-    box-sizing: border-box;
-    border-radius: 4px;
-    border: 2px solid #999999;
-}
-
-input:focus{
-    border: 2px solid #63a4cf;
-}
-
-a{
-  display: inline-block;
-  height: 1em;
-}
-
-p span{
-    display: block;
-    margin: 5px 0;    
-}
-
-a:link{
-    text-decoration: none;
-    font-size: 13px;
-    color: white;
-}
-
-a:hover{
-    text-decoration: underline;
-}
-
-a:visited{
-    color: white;
+    margin: 0 auto;
 }
