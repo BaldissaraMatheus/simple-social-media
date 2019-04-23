@@ -43,8 +43,8 @@
                     <p>Água tem memória!!!</p>
                 </div>
                 <div class="action-bar">
-                    <button class="btn far fa-grin-hearts"></button>
-                    <button class="btn far fa-comment-alt" id="reply-btn" onclick="toggleReplyContainer(this)"></button>
+                    <button class="btn far fa-grin-hearts" onclick="toggleIconStyle(this)"></button>
+                    <button class="btn far fa-comment-alt" id="reply-btn" onclick="toggleReplyContainer(this); toggleIconStyle(this)"></button>
                 </div>
                 <div class="replies">
                     <div class="create-post display-none" id="reply-container">
