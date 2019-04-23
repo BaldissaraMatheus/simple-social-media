@@ -6,6 +6,21 @@
     .dashboard {
         width: 100%;
     }
+
+    .btn--sair {
+        display: none !important;
+    }
+
+    .navbar {
+        display: block !important;
+        position: fixed;
+        margin-top: -50px;
+        z-index: 999;
+        background-color: #3c8dc3;
+        height: 50px;
+        width: 100%;
+        overflow: hidden;
+    }
 }
 
 body { 
@@ -13,12 +28,25 @@ body {
     line-height: 20px;
 }
 
-/* .navbar {
-    width: 100%;
-    height: 60px;
-    overflow: hidden;
-    background-color: #15202b;
-} */
+main {
+    margin-top: 50px;
+}
+
+.btn--sair {
+    float: right;
+    margin: 40px 15px 0 0;
+}
+
+.navbar {
+    display: none;
+}
+
+.navbar a {
+    float: right;
+    text-align: center;
+    padding: 18px 30px;
+    font-size: 20px;
+}
 
 .user-box {
     display: block;
@@ -59,7 +87,7 @@ body {
 
 .user-box > .user-info {
     position: absolute;
-    top: 35px;
+    top: 85px;
 }
 
 .dashboard {
@@ -74,6 +102,10 @@ body {
 }
 
 .post > .post-content {
+    padding: 20px 20px 0 20px;
+} 
+
+.create-post {
     padding: 20px;
 }
 
@@ -102,20 +134,17 @@ body {
     margin-right: 10px;
 }
 
-.reply, .write-reply {
-    padding: 20px 40px;
-}
-
-.write-reply {
-    background-color: #38444d;
+.create-post {
+    background-color: #5372ac;
     border: 1px solid #5372ac; 
 }
 
-.reply {
-    background-color: #15202b;
+.replies > .create-post {
+    background-color: #38444d;
 }
 
-.reply-content > .user-icon {
+.replies > .post > .post-content > .user-icon, 
+.create-post > .post-content > .user-icon {
     display: block;
     float: left;
     margin-right: 15px;
@@ -123,21 +152,22 @@ body {
     height: 40px;
 }
 
-.reply-content > .user-info > * {
+.replies > .post > .post-content > .user-info > *, 
+.create-post > .post-content > .user-info > * {
     display: inline;
 }
 
-.write-reply > .reply-content > .user-icon {
+.create-post > .post-content > .user-icon {
     display: inline-block;
 }
 
-.write-reply > .reply-content > .reply-form {
+.create-post > .post-content > .create-post-form {
     display: inline-block;
     width: 90%;
     margin: 0;
 }
 
-.reply-form > textarea {
+.create-post-form > textarea {
     width: 100%;
     height: 75px;
     padding: 12px 20px;
@@ -148,7 +178,7 @@ body {
     resize: none;  
 }
 
-.reply-form > .btn {
+.create-post-form > .btn {
     float: right;
     margin-top: 10px;
 }

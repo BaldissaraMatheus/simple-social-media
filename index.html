@@ -1,6 +1,7 @@
-<html>
+<!DOCTYPE html>
 
 <head>
+    <meta charset="UTF-8">
     <title> Página principal </title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/shared.css">
@@ -10,15 +11,28 @@
 </head>
 
 <body>
-    <main class="flex-container container">
+    <nav class="navbar">
+        <a class="active" href="/login.html">Sair</a>
+    </nav>
+    <main class="container flex-container">
         <div class="user-box container">
             <a class="user-icon"></a>
             <div class="user-info">
                 <p class="user-name">Aang</p>
                 <p class="user-nick">@otaldoavatar</p>
             </div>
+            <button class="btn btn--small btn--sair">Sair</button>
         </div>
         <div class="dashboard">
+            <div class="create-post">
+                <div class="post-content">
+                    <div class="user-icon"></div>
+                    <form class="create-post-form">
+                        <textarea></textarea>
+                        <input type="submit" value="Enviar" class="btn btn--small">
+                    </form>
+                </div>
+            </div>
             <div class="post">
                 <div class="post-content">
                     <div class="user-icon"></div>
@@ -32,24 +46,36 @@
                     <button class="btn far fa-grin-hearts"></button>
                     <button class="btn far fa-comment-alt"></button>
                 </div>
-                <div class="write-reply">
-                    <div class="reply-content">
-                        <div class="user-icon"></div>
-                        <form class="reply-form">
-                            <textarea></textarea>
-                            <input type="submit" value="Enviar" class="btn btn--small">
-                        </form>
-                    </div>
-                </div>
-                <div class="reply">
-                    <div class="reply-content">
-                        <div class="user-icon"></div>
-                        <div class="user-info">
-                            <div class="user-name">zezinho</div>
-                            <div class="user-nick">@zezinho</div>
+                <div class="replies">
+                    <div class="create-post">
+                        <div class="post-content">
+                            <div class="user-icon"></div>
+                            <form class="create-post-form">
+                                <textarea></textarea>
+                                <input type="submit" value="Enviar" class="btn btn--small">
+                            </form>
                         </div>
-                        <p>Simm!!!</p>
                     </div>
+                    <div class="post">
+                        <div class="post-content">
+                            <div class="user-icon"></div>
+                            <div class="user-info">
+                                <div class="user-name">zezinho</div>
+                                <div class="user-nick">@zezinho</div>
+                            </div>
+                            <p>Simm!!!</p>
+                        </div>
+                    </div>
+                    <div class="post">
+                            <div class="post-content">
+                                <div class="user-icon"></div>
+                                <div class="user-info">
+                                    <div class="user-name">zezinho</div>
+                                    <div class="user-nick">@zezinho</div>
+                                </div>
+                                <p>Unidos pela #LigaNacionalDeHomeopatia!</p>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>

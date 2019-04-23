@@ -26,8 +26,11 @@
 
 body {    
     background: #16202a;
-    margin: auto;
+}
+
+main {
     max-width: 1200px;
+    margin: auto;
 }
 
 p {
