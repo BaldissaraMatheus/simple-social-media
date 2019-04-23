@@ -44,10 +44,10 @@
                 </div>
                 <div class="action-bar">
                     <button class="btn far fa-grin-hearts"></button>
-                    <button class="btn far fa-comment-alt"></button>
+                    <button class="btn far fa-comment-alt" id="reply-btn" onclick="toggleReplyContainer(this)"></button>
                 </div>
                 <div class="replies">
-                    <div class="create-post">
+                    <div class="create-post display-none" id="reply-container">
                         <div class="post-content">
                             <div class="user-icon"></div>
                             <form class="create-post-form">

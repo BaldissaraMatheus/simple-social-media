@@ -182,3 +182,7 @@ main {
     float: right;
     margin-top: 10px;
 }
+
+.display-none {
+    display: none !important;
+}
