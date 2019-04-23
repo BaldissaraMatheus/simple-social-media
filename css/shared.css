@@ -121,3 +121,22 @@ input:focus{
     background-color: #30719c;
     border: 1px solid white;
 }
+
+.btn--small {
+    background-color: #4f98c9;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+    text-align: center;
+    margin: 5px 0;
+    width: 150px;
+    height: 40px;
+    padding: 13px;
+}
+
+.btn--small:hover {
+    background-color: #3c8dc3;
+}
+
+.btn--small:active {
+    background-color: #30719c;
+}
