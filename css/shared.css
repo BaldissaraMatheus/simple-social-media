@@ -1,4 +1,4 @@
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1200px) {
     .flex-container {
         flex-direction: row !important;
         justify-content: space-between !important;
@@ -88,6 +88,7 @@ input {
     box-sizing: border-box;
     border-radius: 4px;
     border: 2px solid #999999;
+    color: #182430;
 }
 
 input:focus{
@@ -95,6 +96,7 @@ input:focus{
 }
 
 .btn {
+    color: white;
     border: none;
     background: none;
     display: inline-block;

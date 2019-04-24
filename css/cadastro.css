@@ -16,6 +16,7 @@ input {
   position: absolute;
   width: 0;
   height: 0;
+  visibility: hidden;
 }
   
 .avatares > [type=radio] + label {
