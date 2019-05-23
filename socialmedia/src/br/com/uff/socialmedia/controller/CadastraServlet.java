@@ -23,12 +23,12 @@ public class CadastraServlet extends HttpServlet{
 	public void service(ServletRequest req, ServletResponse res) throws IOException, ServletException {
 
 		String nome = req.getParameter("nome");		
-		usuario.setNome(nome);
+		usuario.setName(nome);
 		
 		UserDao.save(usuario);
 		
 	    RequestDispatcher rd = req.getRequestDispatcher("/cadastra.jsp");
-	    req.setAttribute("nome", UserDao.get(0).getNome());
+	    req.setAttribute("nome", UserDao.get(0).getName());
 	    rd.forward(req, res);
 		
 	}
