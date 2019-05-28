@@ -15,40 +15,20 @@ import br.com.uff.socialmedia.model.dao.UserDao;
 @WebServlet(urlPatterns="/cadastra")
 public class CadastraServlet extends HttpServlet {
 	
-	private UserDao userDao;
+	UserDao userDao = new UserDao();
 	
 	User usuario = new User();
 	
+	// TODO: Criar um servlet e jsp para RealizaCadastro que faz todo o processo de cadastro em doPost
 	
 	@Override
 	public void service(ServletRequest req, ServletResponse res) throws IOException, ServletException {
-		RequestDispatcher rd = req.getRequestDispatcher("/cadastra.jsp");
-		rd.forward(req, res);
-	}
-	
-	
-	public void doGet(ServletRequest req, ServletResponse res) throws IOException, ServletException {
-	    RequestDispatcher rd = req.getRequestDispatcher("/cadastra.jsp");
-	    String nome = req.getParameter("nome");
-	    req.setAttribute("nome", nome);
-	    rd.forward(req, res);
-	}
-	
-	// TODO: Criar método privado (ou classe?) de cadastro de usuário e chamar dentro do doPost
-	public void doPost(ServletRequest req, ServletResponse res) throws IOException, ServletException {
-		RequestDispatcher rd = req.getRequestDispatcher("/cadastra.jsp");
-		rd.forward(req, res);
-	
 		
-		
-//		String nome = req.getParameter("nome");		
-//		usuario.setName(nome);
-//		
-//		this.userDao.save(usuario);
-//		
-//	    RequestDispatcher rd = req.getRequestDispatcher("/cadastra.jsp");
-//	    req.setAttribute("nome", nome);
-//	    rd.forward(req, res);
+//		usuario.setName("qualquer coisa"); 
+//		userDao.save(usuario);
+//		req.setAttribute("usuario", usuario.getName()); 
+//		RequestDispatcher rd = req.getRequestDispatcher("/cadastra.jsp?usuario=" + usuario.getName());
+//		rd.forward(req, res);
 		
 	}
 	

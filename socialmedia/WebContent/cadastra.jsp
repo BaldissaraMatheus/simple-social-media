@@ -17,7 +17,6 @@
 
 <body>
     <main class="container main-container">
-    Nome do Usuário: ${param.nome}
         <h1>Faça seu cadastro!</h1>
         <form action="" method="POST">
             <input type="email" name="Email" placeholder="Email">
