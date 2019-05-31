@@ -1,6 +1,5 @@
 package br.com.uff.socialmedia.model;
 
-import java.util.HashMap;
 import java.util.List;
 
 public class User {
@@ -8,7 +7,7 @@ public class User {
 	private String email;
 	private List<Post> posts;
 	private String name;
-	private HashMap<String, String> icon;
+	private Icon icon;
 	private List<Post> likedPosts;
 
 	public User() {}
@@ -36,14 +35,6 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public HashMap<String, String> getIcon() {
-		return icon;
-	}
-
-	public void setIcon(HashMap<String, String> icon) {
-		this.icon = icon;
-	}
 	
 	public List<Post> getPosts() {
 		return posts;
@@ -61,6 +52,18 @@ public class User {
 		this.likedPosts = likedPosts;
 	}
 	
+	public Icon getIcon() {
+		return icon;
+	}
+
+//	public void setIcon(Icon icon) {
+//		this.icon = icon;
+//	}
+	
+	public void setIcon(String nome) {
+		this.icon = Icon.findIconByNome(nome);
+	}
+		
 	public Post createPost(String content) {
 		Post post = new Post(content);
 		this.posts.add(post);

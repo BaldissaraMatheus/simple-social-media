@@ -19,16 +19,10 @@ public class CadastraServlet extends HttpServlet {
 	
 	User usuario = new User();
 	
-	// TODO: Criar um servlet e jsp para RealizaCadastro que faz todo o processo de cadastro em doPost
-	
 	@Override
 	public void service(ServletRequest req, ServletResponse res) throws IOException, ServletException {
-		
-//		usuario.setName("qualquer coisa"); 
-//		userDao.save(usuario);
-//		req.setAttribute("usuario", usuario.getName()); 
-//		RequestDispatcher rd = req.getRequestDispatcher("/cadastra.jsp?usuario=" + usuario.getName());
-//		rd.forward(req, res);
+		RequestDispatcher rd = req.getRequestDispatcher("/cadastra.jsp");
+		rd.forward(req, res);
 		
 	}
 	

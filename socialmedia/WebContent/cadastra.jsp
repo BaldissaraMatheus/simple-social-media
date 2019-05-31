@@ -18,27 +18,27 @@
 <body>
     <main class="container main-container">
         <h1>Faça seu cadastro!</h1>
-        <form action="" method="POST">
-            <input type="email" name="Email" placeholder="Email">
-            <input type="text" name="Nome completo" placeholder="Nome completo">
-            <input type="text" name="Nome de usuário" placeholder="Nome de usuário">
-            <input type="password" name="Senha" placeholder="Senha">
+        <form action="realizaCadastro" method="POST">
+            <input type="email" name="email" placeholder="Email">
+            <input type="text" name="name" placeholder="Nome completo">
+            <input type="text" name="username" placeholder="Nome de usuário">
+            <input type="password" name="password" placeholder="Senha">
 
             <h2>Escolha seu avatar:</h2>
             <div class="container avatares">  
-                <input type="radio" name="radio" id="katara" checked>
+                <input type="radio" name="icon" value="aang" id="katara" checked>
                 <label for="katara" class="katara"></label>
 
-                <input type="radio" name="radio" id="aang">
+                <input type="radio" name="icon" value="aang" id="aang">
                 <label for="aang" class="aang"></label>
 
-                <input type="radio" name="radio" id="toph" checked>
+                <input type="radio" name="icon" value="aang" id="toph" checked>
                 <label for="toph" class="toph"></label>
 
-                <input type="radio" name="radio" id="zuko">
+                <input type="radio" name="icon" value="aang" id="zuko">
                 <label for="zuko" class="zuko"></label>
             </div>
-            <input type="submit" value="Confirmar" class="btn btn--small">
+            <input type="submit" value="confirmar" class="btn btn--small">
         </form>
     </main>
 </body>
