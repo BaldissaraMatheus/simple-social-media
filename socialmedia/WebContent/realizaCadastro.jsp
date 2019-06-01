@@ -13,5 +13,6 @@
 		icon name: ${ iconName }
 		<br>
 		icon endereco: ${ iconEndereco }
+		<img src=${ iconEndereco }>
 	</body>
 </html>

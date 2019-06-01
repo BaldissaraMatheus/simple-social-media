@@ -2,7 +2,10 @@ package br.com.uff.socialmedia.model;
 
 public enum Icon {
 
-	AANG("aang", "aang.jpg");
+	AANG("aang", "assets/img/aang.png"),
+	KATARA("katara", "assets/img/katara.png"),
+	TOPH("toph", "assets/img/toph.png"),
+	ZUKO("zuko", "assets/img/zuko.png");
 	
 	private String nome;
 	private String endereco;
