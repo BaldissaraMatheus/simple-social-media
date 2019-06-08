@@ -8,6 +8,4 @@ public interface Dao<T> {
 	
 	public void lista();
 	
-	public T get(int index);
-	
 }
