@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.uff.socialmedia.model.User;
 import br.com.uff.socialmedia.model.dao.UserLogin;
@@ -30,17 +31,15 @@ public class RealizaLoginServlet extends HttpServlet {
 		usuario = UserLogin.Login(email, password);
 		
 		if (usuario != null) {
-			req.setAttribute("name", usuario.getName());
-			req.setAttribute("username", usuario.getUsername());
-			req.setAttribute("icon", usuario.getIcon().getNome());
-			RequestDispatcher rd = req.getRequestDispatcher("/index.jsp");
-			rd.forward(req, res);
+			HttpSession session = req.getSession(true);
+			session.setAttribute("name", usuario.getName());
+			session.setAttribute("username", usuario.getUsername());
+			session.setAttribute("icon", usuario.getIcon().getNome());
+		
+			res.sendRedirect(URL_BASE + "/dashboard");
 			
 		} else {
 			res.sendRedirect(URL_BASE + "/login?err=algo-de-errado-nao-esta-certo");
-		}
-		
-		
+		}	
 	}
-
 }

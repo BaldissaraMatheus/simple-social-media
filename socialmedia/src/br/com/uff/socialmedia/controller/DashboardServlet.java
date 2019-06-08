@@ -8,18 +8,23 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-@WebServlet("/login")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/dashboard")
+public class DashboardServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	@Override
+	private static final String URL_BASE = "/socialmedia";
+       
 	protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		if (req.getParameter("err") != null) {
-			req.setAttribute("err", "Email ou senha incorretos");
+		HttpSession sessao = req.getSession();
+		
+		if (sessao.getAttribute("username") != null) {
+			RequestDispatcher rd = req.getRequestDispatcher("/index.jsp");
+			rd.forward(req, res);
+			
+		} else {
+			res.sendRedirect(URL_BASE + "/login");
 		}
-		RequestDispatcher rd = req.getRequestDispatcher("/login.jsp");
-		rd.forward(req, res);
 	}
 
 }

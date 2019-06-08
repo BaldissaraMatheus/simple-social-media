@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <title> SocialMedia </title>
+    <title> Dashboard </title>
     <link rel="stylesheet" href="assets/stylesheets/normalize.css">
     <link rel="stylesheet" href="assets/stylesheets/shared.css">
     <link rel="stylesheet" href="assets/stylesheets/index.css">
@@ -24,7 +24,7 @@
                 <p class="user-name">${ name }</p>
                 <p class="user-nick">@${ username }</p>
             </div>
-            <button class="btn btn--small btn--sair">Sair</button> <!-- acertar esse botao -->
+            <button class="btn btn--small btn--sair">Sair</button>
         </div>
         <div class="dashboard">
             <div class="create-post">
@@ -38,7 +38,7 @@
             </div>
             <div class="post">
                 <div class="post-content">
-                    <div class="user-icon"></div>
+                    <div class="user-icon user-icon--aang"></div>
                     <div class="user-info">
                         <div class="user-name">zezinho</div>
                         <div class="user-nick">@zezinho</div>
@@ -52,7 +52,7 @@
                 <div class="replies">
                     <div class="create-post display-none" id="reply-container">
                         <div class="post-content">
-                            <div class="user-icon"></div>
+                            <div class="user-icon user-icon--aang"></div>
                             <form class="create-post-form">
                                 <textarea></textarea>
                                 <input type="submit" value="Enviar" class="btn btn--small">
@@ -61,7 +61,7 @@
                     </div>
                     <div class="post">
                         <div class="post-content">
-                            <div class="user-icon"></div>
+                            <div class="user-icon user-icon--aang"></div>
                             <div class="user-info">
                                 <div class="user-name">zezinho</div>
                                 <div class="user-nick">@zezinho</div>
@@ -71,7 +71,7 @@
                     </div>
                     <div class="post">
                             <div class="post-content">
-                                <div class="user-icon"></div>
+                                <div class="user-icon user-icon--aang"></div>
                                 <div class="user-info">
                                     <div class="user-name">zezinho</div>
                                     <div class="user-nick">@zezinho</div>
