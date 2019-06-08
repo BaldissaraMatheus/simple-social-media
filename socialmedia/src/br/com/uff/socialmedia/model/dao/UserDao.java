@@ -13,7 +13,7 @@ public class UserDao implements Dao<User> {
 		User usuario = new User();
 		usuario.setUsername("samir");
 		usuario.setEmail("samir@uff.br");
-		usuario.setIcon("aang");
+		usuario.setIcon("toph");
 		usuario.setName("Samir");
 		usuario.setPassword("123");
 		usuarios.add(usuario);

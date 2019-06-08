@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <title> ${ email } </title>
+    <title> SocialMedia </title>
     <link rel="stylesheet" href="assets/stylesheets/normalize.css">
     <link rel="stylesheet" href="assets/stylesheets/shared.css">
     <link rel="stylesheet" href="assets/stylesheets/index.css">
@@ -19,10 +19,10 @@
     </nav>
     <main class="container flex-container">
         <div class="user-box container">
-            <a class="user-icon"></a>
+            <a class="user-icon  user-icon--${ icon }"></a>
             <div class="user-info">
-                <p class="user-name">Aang</p>
-                <p class="user-nick">@otaldoavatar</p>
+                <p class="user-name">${ name }</p>
+                <p class="user-nick">@${ username }</p>
             </div>
             <button class="btn btn--small btn--sair">Sair</button> <!-- acertar esse botao -->
         </div>

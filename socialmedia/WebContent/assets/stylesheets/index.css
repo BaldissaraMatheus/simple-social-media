@@ -57,8 +57,23 @@ main {
 
 .user-icon {
     border-radius: 50%;
-    background-image: url('../img/aang.png');
     background-size: cover;
+}
+
+.user-icon--aang {
+	background-image: url('../img/aang.png');
+}
+
+.user-icon--katara {
+	background-image: url('../img/katara.png');
+}
+
+.user-icon--toph {
+	background-image: url('../img/toph.png');
+}
+
+.user-icon--zuko {
+	background-image: url('../img/zuko.png');
 }
 
 .user-info {

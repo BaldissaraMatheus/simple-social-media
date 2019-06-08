@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.uff.socialmedia.model.User;
 import br.com.uff.socialmedia.model.dao.UserLogin;
 
 /**
@@ -25,8 +26,13 @@ public class RealizaLoginServlet extends HttpServlet {
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
 		
-		if (UserLogin.Login(email, password) != null) {
-			req.setAttribute("email", email);
+		User usuario = new User();
+		usuario = UserLogin.Login(email, password);
+		
+		if (usuario != null) {
+			req.setAttribute("name", usuario.getName());
+			req.setAttribute("username", usuario.getUsername());
+			req.setAttribute("icon", usuario.getIcon().getNome());
 			RequestDispatcher rd = req.getRequestDispatcher("/index.jsp");
 			rd.forward(req, res);
 			
