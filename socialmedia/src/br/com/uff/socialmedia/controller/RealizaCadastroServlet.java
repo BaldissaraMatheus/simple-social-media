@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.uff.socialmedia.model.User;
 import br.com.uff.socialmedia.model.dao.UserDao;
@@ -20,27 +21,21 @@ public class RealizaCadastroServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		usuario.setUsername(req.getParameter("username")); 
+		usuario.setPassword(req.getParameter("password"));
 		usuario.setName(req.getParameter("name"));
 		usuario.setEmail(req.getParameter("email"));
 		usuario.setIcon(req.getParameter("icon"));
 		
 		userDao.save(usuario);
 		
-		req.setAttribute("username", usuario.getUsername());
-		req.setAttribute("name", usuario.getName());
-		req.setAttribute("email", usuario.getEmail());
-		req.setAttribute("iconName", usuario.getIcon().getNome());
-		req.setAttribute("iconEndereco", usuario.getIcon().getEndereco());
+		HttpSession sessao = req.getSession(true);
+		sessao.setAttribute("username", usuario.getUsername());
+		sessao.setAttribute("name", usuario.getName());
+		sessao.setAttribute("email", usuario.getEmail());
+		sessao.setAttribute("iconName", usuario.getIcon().getNome());
+		sessao.setAttribute("icon", usuario.getIcon().getNome());
 		
-		RequestDispatcher rd = req.getRequestDispatcher(
-			"/realizaCadastro.jsp?usuario=" + usuario.getName()
-			+ "&name=" + usuario.getName()
-			+ "&email=" + usuario.getEmail()
-			+ "&iconName=" + usuario.getIcon().getNome()
-			+ "&iconEndereco=" + usuario.getIcon().getEndereco()
-		);
-		
-		rd.forward(req, res);
+		res.sendRedirect("dashboard");
 	}
 
 }

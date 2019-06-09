@@ -15,7 +15,7 @@
 
 <body>
     <nav class="navbar">
-        <a class="active" href="login">Sair</a>
+        <a class="active" href="logout">Sair</a>
     </nav>
     <main class="container flex-container">
         <div class="user-box container">
@@ -24,7 +24,7 @@
                 <p class="user-name">${ name }</p>
                 <p class="user-nick">@${ username }</p>
             </div>
-            <button class="btn btn--small btn--sair">Sair</button>
+            <button class="btn btn--small btn--sair" href="logout">Sair</button>
         </div>
         <div class="dashboard">
             <div class="create-post">

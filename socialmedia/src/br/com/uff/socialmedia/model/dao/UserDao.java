@@ -11,10 +11,10 @@ public class UserDao implements Dao<User> {
 	
 	static {
 		User usuario = new User();
-		usuario.setUsername("samir");
-		usuario.setEmail("samir@uff.br");
+		usuario.setUsername("teste");
+		usuario.setEmail("teste@uff.br");
 		usuario.setIcon("toph");
-		usuario.setName("Samir");
+		usuario.setName("teste");
 		usuario.setPassword("123");
 		usuarios.add(usuario);
 	}
@@ -38,12 +38,9 @@ public class UserDao implements Dao<User> {
 	}
 
 	public User get(String email) {
-		
 		for (User user : usuarios) {
-//			System.out.println(user.getEmail());
 			if (user.getEmail().equals(email)) return user;
 		}
 		return null;
 	}
-
 }
