@@ -1,5 +1,6 @@
 package br.com.uff.socialmedia.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
@@ -11,7 +12,10 @@ public class User {
 	private Icon icon;
 	private List<Post> likedPosts;
 
-	public User() {}
+	public User() {
+		this.posts = new ArrayList<Post>();
+		this.likedPosts = new ArrayList<Post>();		
+	}
 
 	public String getUsername() {
 		return username;
@@ -71,7 +75,6 @@ public class User {
 		
 	public Post createPost(String content) {
 		Post post = new Post(content);
-		System.out.println(content);
 		this.posts.add(post);
 		return post;
 	}

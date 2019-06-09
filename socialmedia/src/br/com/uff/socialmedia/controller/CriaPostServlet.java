@@ -28,7 +28,6 @@ public class CriaPostServlet extends HttpServlet {
 			usuario.createPost((String)req.getParameter("content"));
 			dao.update(email, usuario);
 			
-			System.out.println(dao.get(email).getPosts().get(0).getContent());
 		} else {
 			System.out.println("nope");
 		}
