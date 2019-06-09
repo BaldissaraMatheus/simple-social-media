@@ -43,4 +43,15 @@ public class UserDao implements Dao<User> {
 		}
 		return null;
 	}
+	
+	public User update(String email, User usuario) {
+		for (User user : usuarios) {
+			if (user.getEmail().equals(email)) {
+				delete(usuarios.indexOf(usuario));
+				usuarios.add(usuario);
+				return usuario;
+			};
+		}
+		return null;
+	}
 }

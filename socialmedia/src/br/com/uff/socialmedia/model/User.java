@@ -64,10 +64,6 @@ public class User {
 	public Icon getIcon() {
 		return icon;
 	}
-
-//	public void setIcon(Icon icon) {
-//		this.icon = icon;
-//	}
 	
 	public void setIcon(String nome) {
 		this.icon = Icon.findIconByNome(nome);
@@ -75,6 +71,7 @@ public class User {
 		
 	public Post createPost(String content) {
 		Post post = new Post(content);
+		System.out.println(content);
 		this.posts.add(post);
 		return post;
 	}

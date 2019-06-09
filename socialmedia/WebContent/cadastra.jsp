@@ -17,11 +17,11 @@
 
 <body>
     <main class="container main-container">
-        <h1>Faça seu cadastro!</h1>
+        <h1>FaÃ§a seu cadastro!</h1>
         <form action="realizaCadastro" method="POST">
             <input type="email" name="email" placeholder="Email">
             <input type="text" name="name" placeholder="Nome completo">
-            <input type="text" name="username" placeholder="Nome de usuário">
+            <input type="text" name="username" placeholder="Nome de usuÃ¡rio">
             <input type="password" name="password" placeholder="Senha">
 
             <h2>Escolha seu avatar:</h2>

@@ -13,9 +13,6 @@ import javax.servlet.http.HttpSession;
 import br.com.uff.socialmedia.model.User;
 import br.com.uff.socialmedia.model.dao.UserLogin;
 
-/**
- * Servlet implementation class RealizaLogin
- */
 @WebServlet("/realizaLogin")
 public class RealizaLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -34,6 +31,7 @@ public class RealizaLoginServlet extends HttpServlet {
 			HttpSession session = req.getSession(true);
 			session.setAttribute("name", usuario.getName());
 			session.setAttribute("username", usuario.getUsername());
+			session.setAttribute("email", usuario.getEmail());
 			session.setAttribute("icon", usuario.getIcon().getNome());
 		
 			res.sendRedirect(URL_BASE + "/dashboard");
