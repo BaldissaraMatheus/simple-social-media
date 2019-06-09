@@ -75,13 +75,15 @@ public class User {
 		
 	public Post createPost(String content) {
 		Post post = new Post(content);
+		post.setOwner(this);
 		this.posts.add(post);
 		return post;
 	}
 	
 	public Reply createReply(Post origin, String content) {
 		Reply reply = new Reply(origin, content);
-		this.posts.add(reply);
+		reply.setOwner(this);
+		origin.addReply(reply);
 		return reply;
 	}
 	

@@ -1,24 +1,27 @@
 package br.com.uff.socialmedia.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Post {
-	private Long id;
+	private int id;
 	private String content;
 	private LocalDate createdDate;
 	private Integer likes;
-	private Reply[] replies;
+	private List<Reply> replies;
 	private User owner;
 	
 	public Post(String content) {
 		this.content = content;
+		this.replies = new ArrayList<Reply>();
 	}
 	
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -46,11 +49,11 @@ public class Post {
 		this.likes = likes;
 	}
 
-	public Reply[] getReplies() {
+	public List<Reply> getReplies() {
 		return replies;
 	}
 
-	public void setReplies(Reply[] replies) {
+	public void setReplies(List<Reply> replies) {
 		this.replies = replies;
 	}
 
@@ -62,4 +65,8 @@ public class Post {
 		this.owner = owner;
 	}
 
+	public void addReply(Reply reply) {
+		this.replies.add(reply);
+	}
+	
 }

@@ -1,10 +1,5 @@
-<%@ page import="br.com.uff.socialmedia.model.Post" %>
-<%@ page import="br.com.uff.socialmedia.model.Reply" %>
-<%@ page import="java.util.List"%>
-<%@ page import="java.util.ArrayList"%>
-
 <%
-	List<Post> posts = (ArrayList<Post>)request.getAttribute("posts");
+	
 %>
 <!DOCTYPE html>
 <head>
@@ -40,19 +35,14 @@
                     </form>
                 </div>
             </div>
-            
-            <%
-				for (Post post : posts) {
-			%>
-            
             <div class="post">
                 <div class="post-content">
                     <div class="user-icon user-icon--aang"></div>
                     <div class="user-info">
-                        <div class="user-name"><% out.println(post.getOwner().getName()); %></div>
-                        <div class="user-nick">@<% out.println(post.getOwner().getUsername()); %></div>
+                        <div class="user-name">zezinho</div>
+                        <div class="user-nick">@zezinho</div>
                     </div>
-                    <p><% out.println(post.getContent()); %></p>
+                    <p>Água tem memória</p>
                 </div>
                 <div class="action-bar">
                     <button class="btn far fa-grin-hearts" onclick="toggleIconStyle(this)"></button>
@@ -68,27 +58,28 @@
                             </form>
                         </div>
                     </div>
-                     	<%
-							for (Reply reply : post.getReplies()) {
-						%>
                     <div class="post">
                         <div class="post-content">
                             <div class="user-icon user-icon--aang"></div>
                             <div class="user-info">
-                                <div class="user-name"><% out.println(reply.getOwner().getName()); %></div>
-                                <div class="user-nick">@<% out.println(reply.getOwner().getUsername()); %></div>
+                                <div class="user-name">zezinho</div>
+                                <div class="user-nick">@zezinho</div>
                             </div>
-                            <p><% out.println(reply.getContent()); %></p>
+                            <p>Simm!!!</p>
                         </div>
                     </div>
-			            <%
-                    		}
-						%>
+                    <div class="post">
+	                    <div class="post-content">
+	                        <div class="user-icon user-icon--aang"></div>
+	                        <div class="user-info">
+	                            <div class="user-name">zezinho</div>
+	                            <div class="user-nick">@zezinho</div>
+	                        </div>
+	                        <p>Unidos pela #LigaNacionalDeHomeopatia!</p>
+                    	</div>
+                    </div>
                 </div>
             </div>
-	        <%
-            	}
-			%>
         </div>
     </main>
 </body>

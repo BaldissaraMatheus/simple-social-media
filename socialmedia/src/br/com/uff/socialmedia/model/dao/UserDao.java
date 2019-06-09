@@ -10,13 +10,26 @@ public class UserDao implements Dao<User> {
 	private static List<User> usuarios = new ArrayList<User>();
 	
 	static {
-		User usuario = new User();
-		usuario.setUsername("teste");
-		usuario.setEmail("teste@uff.br");
-		usuario.setIcon("toph");
-		usuario.setName("teste");
-		usuario.setPassword("123");
-		usuarios.add(usuario);
+//		User usuario = new User();
+//		usuario.setUsername("teste");
+//		usuario.setEmail("teste@uff.br");
+//		usuario.setIcon("toph");
+//		usuario.setName("teste");
+//		usuario.setPassword("123");
+//		
+//		PostDao dao = new PostDao();
+//		Post post = usuario.createPost("Água tem memória!!!");
+//		usuario.createReply(post, "Abortar eh muito bom");
+//		usuario.createReply(post, "#UnidosPelaLigaNacionalDeHomeopatia");
+//		dao.save(post);
+//		int i = 0;
+//		
+//		for (Reply reply : dao.get(post.getId()).getReplies()) {			
+//			System.out.println(reply.getContent() + i);
+//			i += 1;
+//		}
+//		
+//		usuarios.add(usuario);
 	}
 	
 	@Override
