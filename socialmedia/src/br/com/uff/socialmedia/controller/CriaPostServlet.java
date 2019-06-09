@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import br.com.uff.socialmedia.model.Post;
 import br.com.uff.socialmedia.model.User;
+import br.com.uff.socialmedia.model.dao.PostDao;
 import br.com.uff.socialmedia.model.dao.UserDao;
 
 @WebServlet("/criaPost")
@@ -19,13 +21,15 @@ public class CriaPostServlet extends HttpServlet {
        
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		HttpSession sessao = req.getSession();
-		UserDao dao = new UserDao();
+		UserDao userDao = new UserDao();
+		PostDao postDao = new PostDao();
 		
 		if (sessao.getAttribute("email") != null && !req.getParameter("content").equals("")) {
 			String email = (String) sessao.getAttribute("email");
-			User usuario = dao.get(email);
-			usuario.createPost((String)req.getParameter("content"));
-			dao.update(email, usuario);
+			User usuario = userDao.get(email);
+			Post post = usuario.createPost((String)req.getParameter("content"));
+			postDao.save(post);
+			userDao.update(email, usuario);
 			
 		} else {
 			System.out.println("nope");

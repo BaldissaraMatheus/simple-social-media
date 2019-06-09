@@ -23,7 +23,7 @@ public class RealizaLoginServlet extends HttpServlet {
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
 		
-		User usuario = new User();
+		User usuario;
 		usuario = UserLogin.Login(email, password);
 		
 		if (usuario != null) {

@@ -57,6 +57,10 @@ public class UserDao implements Dao<User> {
 		return null;
 	}
 	
+	public List<User> getAll() {
+		return usuarios;
+	}
+	
 	public User update(String email, User usuario) {
 		for (User user : usuarios) {
 			if (user.getEmail().equals(email)) {

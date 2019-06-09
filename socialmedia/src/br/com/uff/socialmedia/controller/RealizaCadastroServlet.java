@@ -17,9 +17,10 @@ import br.com.uff.socialmedia.model.dao.UserDao;
 public class RealizaCadastroServlet extends HttpServlet {
 	
 	UserDao userDao = new UserDao();
-	User usuario = new User();
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		User usuario = new User();
+		
 		usuario.setUsername(req.getParameter("username")); 
 		usuario.setPassword(req.getParameter("password"));
 		usuario.setName(req.getParameter("name"));
@@ -34,6 +35,10 @@ public class RealizaCadastroServlet extends HttpServlet {
 		sessao.setAttribute("email", usuario.getEmail());
 		sessao.setAttribute("iconName", usuario.getIcon().getNome());
 		sessao.setAttribute("icon", usuario.getIcon().getNome());
+		
+		for (User user : userDao.getAll()) {
+			System.out.println(user.getEmail());
+		}
 		
 		res.sendRedirect("dashboard");
 	}

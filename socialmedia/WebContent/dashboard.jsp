@@ -47,7 +47,7 @@
             
             <div class="post">
                 <div class="post-content">
-                    <div class="user-icon user-icon--aang"></div>
+                    <div class="user-icon user-icon--<% out.println(post.getOwner().getIcon().getNome()); %>"></div>
                     <div class="user-info">
                         <div class="user-name"><% out.println(post.getOwner().getName()); %></div>
                         <div class="user-nick">@<% out.println(post.getOwner().getUsername()); %></div>
