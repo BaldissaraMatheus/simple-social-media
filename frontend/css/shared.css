@@ -164,3 +164,8 @@ input:focus {
     margin-top: 12px;
     margin-bottom: 12px;
 }
+
+.form-button-margin {
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
