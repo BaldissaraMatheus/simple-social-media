@@ -31,8 +31,6 @@ public class CriaPostServlet extends HttpServlet {
 			postDao.save(post);
 			userDao.update(email, usuario);
 			
-		} else {
-			System.out.println("nope");
 		}
 		
 		res.sendRedirect(URL_BASE + "/dashboard");

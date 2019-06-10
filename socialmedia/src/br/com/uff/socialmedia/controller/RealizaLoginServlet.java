@@ -23,15 +23,11 @@ public class RealizaLoginServlet extends HttpServlet {
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
 		
-		User usuario;
-		usuario = UserLogin.Login(email, password);
+		User usuario = UserLogin.Login(email, password);
 		
 		if (usuario != null) {
 			HttpSession session = req.getSession(true);
-			session.setAttribute("name", usuario.getName());
-			session.setAttribute("username", usuario.getUsername());
-			session.setAttribute("email", usuario.getEmail());
-			session.setAttribute("icon", usuario.getIcon().getNome());
+			session.setAttribute("usuario", usuario);
 		
 			res.sendRedirect(URL_BASE + "/dashboard");
 			

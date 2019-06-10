@@ -114,4 +114,22 @@ public class User {
 		}
 	}
 	
+	public Post getLikedPostById(int id) {
+		for (Post post : likedPosts) {
+			if (post.getId() == id) return post;
+		}
+		return null;
+	}
+	
+	public void removeLikedPost(Post post) {
+		for (Post likedPost : likedPosts) {
+			if (likedPost.equals(post)) likedPosts.remove(likedPosts.indexOf(post));
+			return;
+		}
+	}
+	
+	public void addLikedPost(Post post) {
+		likedPosts.add(post);
+	}
+	
 }

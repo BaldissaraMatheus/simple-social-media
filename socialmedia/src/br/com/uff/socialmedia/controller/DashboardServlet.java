@@ -21,7 +21,7 @@ public class DashboardServlet extends HttpServlet {
 		HttpSession sessao = req.getSession();
 		PostDao dao = new PostDao();
 		
-		if (sessao.getAttribute("username") != null) {
+		if (sessao.getAttribute("usuario") != null) {
 			req.setAttribute("posts", dao.getAll());
 						
 			RequestDispatcher rd = req.getRequestDispatcher("/dashboard.jsp");
