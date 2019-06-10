@@ -3,15 +3,12 @@
         flex-direction: row !important;
         justify-content: space-between !important;
     }
-    
     .left {
         text-align: left;
     }
-    
     .right {
         text-align: right;
     }
-
     .h1-container {
         display: block;
         width: 450px;
@@ -24,12 +21,12 @@
     color: white;
 }
 
-body {    
+body {
     background: #16202a;
 }
 
 main {
-    max-width: 1200px;
+    max-width: 1350px;
     margin: auto;
 }
 
@@ -51,29 +48,32 @@ h1 {
     justify-content: center;
 }
 
-.flex-container > * {
+.flex-container>* {
     margin: 7.5px;
     width: auto;
 }
 
-.center, .left, .right {
+.center,
+.left,
+.right {
     text-align: center;
 }
 
 a {
     display: inline-block;
     font-size: 13px;
-  }
-  
-a:link, a:visited {
-      text-decoration: none;
-      color: white;
-  }
-  
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
 a:hover {
-      text-decoration: underline;
-  }
-  
+    text-decoration: underline;
+}
+
 .form-link {
     display: block;
     margin-top: 5px;
@@ -91,7 +91,7 @@ input {
     color: #182430;
 }
 
-input:focus{
+input:focus {
     border: 2px solid #63a4cf;
 }
 
@@ -103,7 +103,7 @@ input:focus{
     cursor: pointer;
 }
 
-.btn:active{
+.btn:active {
     border: 1px solid white;
 }
 
@@ -144,4 +144,28 @@ input:focus{
 
 .btn--small:active {
     background-color: #30719c;
+}
+
+.image-background {
+    background-image: url('../img/aang_background.jpg');
+    background-size: cover;
+}
+
+.form-margin {
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+.form-input-margin {
+    margin-bottom: 16px;
+}
+
+.form-link-margin {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.form-button-margin {
+    margin-top: 18px;
+    margin-bottom: 18px;
 }
