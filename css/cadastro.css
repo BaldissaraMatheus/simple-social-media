@@ -1,23 +1,37 @@
-.main-container{
-  width:100%;
-  max-width: 1000px;
+.main-container {
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 45px;
 }
 
+<<<<<<< HEAD:css/cadastro.css
+=======
+body {
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+    width: 300px;
+}
+
+>>>>>>> 24be621... atualização do front:frontend/css/cadastro.css
 input {
-  margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .avatares {
-  width: 100%;
-  max-width: 350px;
+    width: 100%;
+    max-width: 350px;
 }
 
-.avatares > [type=radio] { 
-  position: absolute;
-  width: 0;
-  height: 0;
-  visibility: hidden;
+.avatares>[type=radio] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    visibility: hidden;
 }
+<<<<<<< HEAD:css/cadastro.css
   
 .avatares > [type=radio] + label {
   display: inline-block;
@@ -26,24 +40,39 @@ input {
   width: 49%;
   height: 150px;
   background-size: cover;
+=======
+
+.avatares>[type=radio]+label {
+    display: inline-block;
+    cursor: pointer;
+    display: inline-block;
+    width: 49%;
+    height: 150px;
+    background-size: cover;
+>>>>>>> 24be621... atualização do front:frontend/css/cadastro.css
 }
 
-.avatares > [type=radio] + .katara {
-  background-image: url('../img/katara.png');
+.avatares>[type=radio]+.katara {
+    background-image: url('../img/katara.png');
 }
 
-.avatares > [type=radio] + .aang {
-  background-image: url('../img/aang.png');
+.avatares>[type=radio]+.aang {
+    background-image: url('../img/aang.png');
 }
 
-.avatares > [type=radio] + .toph {
-  background-image: url('../img/toph.png');
+.avatares>[type=radio]+.toph {
+    background-image: url('../img/toph.png');
 }
 
-.avatares > [type=radio] + .zuko {
-  background-image: url('../img/zuko.png');
+.avatares>[type=radio]+.zuko {
+    background-image: url('../img/zuko.png');
 }
 
+<<<<<<< HEAD:css/cadastro.css
 .avatares > [type=radio]:checked + label {
   outline: 2px solid #4f98c9;
+=======
+.avatares>[type=radio]:checked+label {
+    outline: 2px solid #4f98c9;
+>>>>>>> 24be621... atualização do front:frontend/css/cadastro.css
 }
