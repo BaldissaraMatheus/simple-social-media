@@ -67,8 +67,9 @@
                     <div class="create-post display-none" id="reply-container">
                         <div class="post-content">
                             <div class="user-icon user-icon--${ usuario.getIcon().getNome() }"></div>
-                            <form class="create-post-form">
-                                <textarea></textarea>
+                            <form action="criaReply" method="GET" class="create-post-form">
+                            	<input type="hidden" name="postId" value="<% out.print(post.getId()); %>"/>
+                                <textarea name="content"></textarea>
                                 <input type="submit" value="Enviar" class="btn btn--small">
                             </form>
                         </div>
