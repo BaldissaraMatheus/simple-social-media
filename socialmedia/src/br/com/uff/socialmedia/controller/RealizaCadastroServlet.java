@@ -1,6 +1,8 @@
 package br.com.uff.socialmedia.controller;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,12 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import br.com.uff.socialmedia.conector.Conector;
 import br.com.uff.socialmedia.model.User;
 import br.com.uff.socialmedia.model.dao.UserDao;
 
 @WebServlet("/realizaCadastro")
 public class RealizaCadastroServlet extends HttpServlet {
-	
+	Connection con;
 	UserDao userDao = new UserDao();
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -26,7 +29,7 @@ public class RealizaCadastroServlet extends HttpServlet {
 		usuario.setName(req.getParameter("name"));
 		usuario.setEmail(req.getParameter("email"));
 		usuario.setIcon(req.getParameter("icon"));
-		
+
 		userDao.save(usuario);
 		
 		HttpSession sessao = req.getSession(true);

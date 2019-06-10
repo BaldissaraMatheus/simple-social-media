@@ -147,7 +147,11 @@ input:focus {
 }
 
 .image-background {
+<<<<<<< HEAD
+    background-image: url('../img/aang_background.jpg') !important;
+=======
     background-image: url('../img/aang_background.jpg');
+>>>>>>> branch 'master' of https://github.com/BaldissaraMatheus/simple-social-media.git
     background-size: cover;
 }
 

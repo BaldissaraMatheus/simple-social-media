@@ -1,31 +1,26 @@
-<%
-
-%>
-
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <html>
 
 <head>
-    <meta charset="utf-8">
     <title>Cadastre-se</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="assets/img/favicon.ico" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
     <link rel="stylesheet" href="assets/stylesheets/normalize.css">
     <link rel="stylesheet" href="assets/stylesheets/shared.css">
     <link rel="stylesheet" href="assets/stylesheets/cadastro.css">
 </head>
 
-<body>
+<body class="image-background">
     <main class="container main-container">
-        <h1>FaÃ§a seu cadastro!</h1>
-        <form action="realizaCadastro" method="POST">
+        <h1>Faça seu cadastro!</h1>
+         <form action="realizaCadastro" method="POST">
             <input type="email" name="email" placeholder="Email">
             <input type="text" name="name" placeholder="Nome completo">
-            <input type="text" name="username" placeholder="Nome de usuÃ¡rio">
+            <input type="text" name="username" placeholder="Nome de usuário">
             <input type="password" name="password" placeholder="Senha">
 
             <h2>Escolha seu avatar:</h2>
-            <div class="container avatares">  
+            <div class="container avatares">
                 <input type="radio" name="icon" value="katara" id="katara" checked>
                 <label for="katara" class="katara"></label>
 
@@ -38,7 +33,9 @@
                 <input type="radio" name="icon" value="zuko" id="zuko">
                 <label for="zuko" class="zuko"></label>
             </div>
-            <input type="submit" value="confirmar" class="btn btn--small">
+            <div class="form-button-margin">
+                <input type="submit" value="confirmar" class="btn btn--small">
+            </div>
         </form>
     </main>
 </body>
