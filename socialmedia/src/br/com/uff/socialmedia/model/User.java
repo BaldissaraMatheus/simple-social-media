@@ -14,7 +14,7 @@ public class User {
 
 	public User() {
 		this.posts = new ArrayList<Post>();
-		this.likedPosts = new ArrayList<Post>();		
+		this.likedPosts = new ArrayList<Post>();
 	}
 
 	public String getUsername() {
@@ -48,7 +48,7 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public List<Post> getPosts() {
 		return posts;
 	}
@@ -64,30 +64,30 @@ public class User {
 	public void setLikedPosts(List<Post> likedPosts) {
 		this.likedPosts = likedPosts;
 	}
-	
+
 	public Icon getIcon() {
 		return icon;
 	}
-	
+
 	public void setIcon(String nome) {
 		this.icon = Icon.findIconByNome(nome);
 	}
-		
+
 	public Post createPost(String content) {
 		Post post = new Post(content);
 		post.setOwner(this);
 		this.posts.add(post);
 		return post;
 	}
-	
+
 	public Reply createReply(Post origin, String content) {
 		Reply reply = new Reply(origin, content);
 		reply.setOwner(this);
 		origin.addReply(reply);
 		return reply;
 	}
-	
-	public Post updatePost(Post post, String content) {		
+
+	public Post updatePost(Post post, String content) {
 		int index = posts.indexOf(post);
 		post.setContent(content);
 		this.updatePost(index, post);
@@ -98,38 +98,40 @@ public class User {
 		this.posts.remove(index);
 		this.posts.add(post);
 	}
-	
+
 	public void deletePost(Post post) {
 		this.posts.remove(post);
 	}
-	
+
 	public Post likePost(Post post) {
 		if (this.likedPosts.contains(post)) {
 			this.likedPosts.remove(post);
 			return null;
-			
+
 		} else {
 			this.likedPosts.add(post);
 			return post;
 		}
 	}
-	
+
 	public Post getLikedPostById(int id) {
 		for (Post post : likedPosts) {
-			if (post.getId() == id) return post;
+			if (post.getId() == id)
+				return post;
 		}
 		return null;
 	}
-	
+
 	public void removeLikedPost(Post post) {
 		for (Post likedPost : likedPosts) {
-			if (likedPost.equals(post)) likedPosts.remove(likedPosts.indexOf(post));
+			if (likedPost.equals(post))
+				likedPosts.remove(likedPosts.indexOf(post));
 			return;
 		}
 	}
-	
+
 	public void addLikedPost(Post post) {
 		likedPosts.add(post);
 	}
-	
+
 }

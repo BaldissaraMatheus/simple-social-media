@@ -18,19 +18,19 @@ import br.com.uff.socialmedia.model.dao.UserDao;
 public class CriaPostServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String URL_BASE = "/socialmedia";
-       
+
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		HttpSession sessao = req.getSession();
 		UserDao userDao = new UserDao();
 		PostDao postDao = new PostDao();
-		
+
 		if (sessao.getAttribute("usuario") != null && !req.getParameter("content").equals("")) {
 			User usuario = (User) sessao.getAttribute("usuario");
-			Post post = usuario.createPost((String)req.getParameter("content"));
+			Post post = usuario.createPost((String) req.getParameter("content"));
 			postDao.save(post);
 			userDao.update(usuario.getEmail(), usuario);
 		}
-		
+
 		res.sendRedirect(URL_BASE + "/dashboard");
 	}
 

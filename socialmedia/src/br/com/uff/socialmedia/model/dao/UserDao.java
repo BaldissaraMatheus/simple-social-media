@@ -12,7 +12,6 @@ import br.com.uff.socialmedia.model.User;
 
 public class UserDao implements Dao<User> {
 	private static List<User> usuarios = new ArrayList<User>();
-	Connection con = Conector.getConnection();
 
 	@Override
 	public void save(User user) {

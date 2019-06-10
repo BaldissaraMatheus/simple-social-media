@@ -1,7 +1,5 @@
 package br.com.uff.socialmedia.model.dao;
 
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,19 +9,20 @@ public class PostDao implements Dao<Post> {
 
 	private static List<Post> posts = new ArrayList<Post>();
 	private static int POST_ID = 0;
-	
+
 	@Override
 	public void save(Post post) {
 		post.setId(POST_ID);
 		POST_ID += 1;
-		posts.add(post);		
+		posts.add(post);
 	}
 
 	@Override
 	public void delete(int id) {
 		for (Post post : posts) {
-			if (post.getId() == id) posts.remove(posts.indexOf(post));					
-		}		
+			if (post.getId() == id)
+				posts.remove(posts.indexOf(post));
+		}
 	}
 
 	public void update(int id, Post newPost) {
@@ -34,22 +33,24 @@ public class PostDao implements Dao<Post> {
 			}
 		}
 	}
-	
+
 	public Post get(int id) {
 		for (Post post : posts) {
-			if (post.getId() == id) return post;
+			if (post.getId() == id)
+				return post;
 		}
-		
+
 		return null;
 	}
-	
+
 	public List<Post> getAll() {
 		return posts;
 	}
-	
+
 	@Override
 	public void lista() {
-		for (Post post : posts) System.out.println(post.getContent());
+		for (Post post : posts)
+			System.out.println(post.getContent());
 	}
-	
+
 }
