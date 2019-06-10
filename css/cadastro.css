@@ -4,8 +4,6 @@
     margin-top: 45px;
 }
 
-<<<<<<< HEAD:css/cadastro.css
-=======
 body {
     text-align: center;
 }
@@ -15,7 +13,6 @@ form {
     width: 300px;
 }
 
->>>>>>> 24be621... atualização do front:frontend/css/cadastro.css
 input {
     margin-bottom: 25px;
 }
@@ -31,16 +28,6 @@ input {
     height: 0;
     visibility: hidden;
 }
-<<<<<<< HEAD:css/cadastro.css
-  
-.avatares > [type=radio] + label {
-  display: inline-block;
-  cursor: pointer;
-  display: inline-block;
-  width: 49%;
-  height: 150px;
-  background-size: cover;
-=======
 
 .avatares>[type=radio]+label {
     display: inline-block;
@@ -49,7 +36,6 @@ input {
     width: 49%;
     height: 150px;
     background-size: cover;
->>>>>>> 24be621... atualização do front:frontend/css/cadastro.css
 }
 
 .avatares>[type=radio]+.katara {
@@ -68,11 +54,6 @@ input {
     background-image: url('../img/zuko.png');
 }
 
-<<<<<<< HEAD:css/cadastro.css
-.avatares > [type=radio]:checked + label {
-  outline: 2px solid #4f98c9;
-=======
 .avatares>[type=radio]:checked+label {
-    outline: 2px solid #4f98c9;
->>>>>>> 24be621... atualização do front:frontend/css/cadastro.css
+    outline: 3px solid #ffffff;
 }
