@@ -1,0 +1,6 @@
+@charset "ISO-8859-1";
+@media only screen and (min-width: 1200px) {
+    main {
+        margin-top: 300px;
+    }
+}

@@ -87,4 +87,19 @@ public class UserDao implements Dao<User> {
 		}
 		return null;
 	}
+	
+	public void resetPassword(User usuario) {
+		Connection con = Conector.getConnection();
+		PreparedStatement st;
+		try {
+			st = con.prepareStatement("update user set password=? where email=?");
+			st.setString(2, usuario.getEmail());
+			st.setString(1, usuario.getPassword());
+			st.executeUpdate();
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }
