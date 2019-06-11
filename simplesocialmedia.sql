@@ -35,10 +35,8 @@ CREATE TABLE user (
 CREATE TABLE post (
   idpost INT NOT NULL AUTO_INCREMENT,
   content VARCHAR(45) NOT NULL,
-  likes INT NULL,
   owner_username VARCHAR(45) NOT NULL,
   PRIMARY KEY (idpost),  
-  CONSTRAINT `fk_post_user`
     FOREIGN KEY (owner_username) REFERENCES user (username));
 
 
@@ -53,14 +51,8 @@ CREATE TABLE reply (
   user_username VARCHAR(45) NOT NULL,
   post_idpost INT NOT NULL,
   PRIMARY KEY (idreply),
-  CONSTRAINT `fk_reply_user1`
-    FOREIGN KEY (user_username)
-    REFERENCES user (username)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_reply_post1`
-    FOREIGN KEY (post_idpost)
-    REFERENCES post (idpost));
+  FOREIGN KEY (user_username) REFERENCES user (username),
+  FOREIGN KEY (post_idpost) REFERENCES post (idpost));
 
 insert into user (username, email, name, password, icon) values( 'everynite', 'chalitameneguelli14@gmail.com', 'Davi', '123', 'katara');
 
