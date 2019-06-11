@@ -5,13 +5,10 @@
 <%@ page import="java.util.ArrayList"%>
 
 <%
-
 	HttpSession sessao = request.getSession(true);
 	User usuario = (User) sessao.getAttribute("usuario");
-	
-	List<Post> posts = (ArrayList<Post>)request.getAttribute("posts");
-	
-	
+
+	List<Post> posts = (ArrayList<Post>) request.getAttribute("posts");
 %>
 <!DOCTYPE html>
 <head>
@@ -51,31 +48,46 @@
 			</div>
 		</div>
 		<%
-				for (Post post : posts) {
-			%>
+			for (Post post : posts) {
+		%>
 		<div class="post">
 			<div class="post-content">
 				<div
-					class="user-icon user-icon--<% out.println(post.getOwner().getIcon().getNome()); %>"></div>
+					class="user-icon user-icon--<%out.println(post.getOwner().getIcon().getNome());%>"></div>
 				<div class="user-info">
 					<div class="user-name">
-						<% out.println(post.getOwner().getName()); %>
+						<%
+							out.println(post.getOwner().getName());
+						%>
 					</div>
 					<div class="user-nick">
-						@<% out.println(post.getOwner().getUsername()); %>
+						@<%
+						out.println(post.getOwner().getUsername());
+					%>
 					</div>
 				</div>
 				<p>
-					<% out.println(post.getContent()); %>
+					<%
+						out.println(post.getContent());
+					%>
 				</p>
 			</div>
 			<div class="action-bar">
 				<a
-					class="btn fa<% if(usuario.getLikedPostById(post.getId()) == null) {out.println("r");} else {out.println("s");}; %> fa-grin-hearts"
+					class="btn fa<%if (usuario.getLikedPostById(post.getId()) == null) {
+					out.println("r");
+				} else {
+					out.println("s");
+				}
+				;%> fa-grin-hearts"
 					onclick="toggleIconStyle(this)"
-					href="/socialmedia/likePost?post=<% out.println(post.getId()); %>"></a>
+					href="/socialmedia/likePost?post=<%out.println(post.getId());%>"></a>
 				<button class="btn far fa-comment-alt" id="reply-btn"
 					onclick="toggleReplyContainer(this); toggleIconStyle(this)"></button>
+				<form action="excluiPost" method="post">
+					<input type="hidden" name="postId" value=<%out.println(post.getId());%> />
+					<input type="submit" value="X">
+				</form>
 			</div>
 			<div class="replies">
 				<div class="create-post display-none" id="reply-container">
@@ -83,40 +95,48 @@
 						<div class="user-icon user-icon--${ usuario.getIcon().getNome() }"></div>
 						<form action="criaReply" method="GET" class="create-post-form">
 							<input type="hidden" name="postId"
-								value="<% out.print(post.getId()); %>" />
+								value="<%out.print(post.getId());%>" />
 							<textarea name="content"></textarea>
 							<input type="submit" value="Enviar" class="btn btn--small">
 						</form>
 					</div>
 				</div>
 				<%
-							for (Reply reply : post.getReplies()) {
-						%>
+					for (Reply reply : post.getReplies()) {
+				%>
 				<div class="post">
 					<div class="post-content">
 						<div
-							class="user-icon user-icon--<% out.println(reply.getOwner().getIcon().getNome()); %>"></div>
+							class="user-icon user-icon--<%out.println(reply.getOwner().getIcon().getNome());%>">
+						</div>
+
 						<div class="user-info">
 							<div class="user-name">
-								<% out.println(reply.getOwner().getName()); %>
+								<%
+									out.println(reply.getOwner().getName());
+								%>
 							</div>
 							<div class="user-nick">
-								@<% out.println(reply.getOwner().getUsername()); %>
+								@<%
+								out.println(reply.getOwner().getUsername());
+							%>
 							</div>
 						</div>
 						<p>
-							<% out.println(reply.getContent()); %>
+							<%
+								out.println(reply.getContent());
+							%>
 						</p>
 					</div>
 				</div>
 				<%
-                    		}
-						%>
+					}
+				%>
 			</div>
 		</div>
 		<%
-            	}
-			%>
+			}
+		%>
 	</div>
 	</main>
 </body>

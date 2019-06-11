@@ -1,4 +1,7 @@
-<% %>
+
+<%
+	
+%>
 
 <html>
 
@@ -24,8 +27,8 @@
 			<form action="realizaLogin" method="POST">
 				<input type="email" name="email" placeholder="Email"> <input
 					type="password" name="password" placeholder="Senha"> <a
-					class='form-link' href="redefinicao-senha">Redefinir minha senha</a> <a
-					class='form-link' href="cadastra">Crie uma conta</a> <input
+					class='form-link' href="redefinicao-senha">Redefinir minha
+					senha</a> <a class='form-link' href="cadastra">Crie uma conta</a> <input
 					type="submit" value="Entrar" class="btn btn--main">
 			</form>
 		</div>

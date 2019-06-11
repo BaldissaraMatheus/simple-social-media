@@ -20,11 +20,15 @@ public class PostDao implements Dao<Post> {
 	@Override
 	public void delete(int id) {
 		for (Post post : posts) {
-			if (post.getId() == id)
-				posts.remove(posts.indexOf(post));
+			System.out.println(post.getId());
+			if (post.getId() == id) {
+				posts.remove(post);
+				return;
+			}
+				
 		}
 	}
-
+	
 	public void update(int id, Post newPost) {
 		for (Post post : posts) {
 			if (post.getId() == id) {

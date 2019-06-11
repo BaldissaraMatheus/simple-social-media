@@ -21,6 +21,12 @@
     color: white;
 }
 
+.btn-excluir{
+	display: inline-block;
+	padding: 8px 8px 8px 32px;
+	background: url(assets/img/excluir.png);
+}
+
 body {
     background: #16202a;
 }
