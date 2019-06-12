@@ -6,6 +6,4 @@ public interface Dao<T> {
 	
 	public void delete(int index);
 	
-	public void lista();
-	
 }

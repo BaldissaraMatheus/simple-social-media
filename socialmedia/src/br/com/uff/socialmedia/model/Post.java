@@ -12,6 +12,10 @@ public class Post {
 	private List<Reply> replies;
 	private User owner;
 	
+	public Post() {
+		this.replies = new ArrayList<Reply>();
+	}
+	
 	public Post(String content) {
 		this.content = content;
 		this.replies = new ArrayList<Reply>();
