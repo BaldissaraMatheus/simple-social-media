@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import br.com.uff.socialmedia.model.User;
 import br.com.uff.socialmedia.model.dao.PostDao;
 
 @WebServlet("/dashboard")
@@ -21,7 +22,9 @@ public class DashboardServlet extends HttpServlet {
 		HttpSession sessao = req.getSession();
 		PostDao dao = new PostDao();
 
-		if (sessao.getAttribute("usuario") != null) {
+		User usuario = (User) sessao.getAttribute("usuario");
+		
+		if (usuario != null) {
 			req.setAttribute("posts", dao.getAll());
 
 			RequestDispatcher rd = req.getRequestDispatcher("/dashboard.jsp");

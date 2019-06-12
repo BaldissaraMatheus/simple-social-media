@@ -20,6 +20,15 @@ CREATE TABLE post (
     FOREIGN KEY (user_username) REFERENCES user (username)
 );
 
+CREATE TABLE likedPost (
+    id INT NOT NULL AUTO_INCREMENT,
+    user_username VARCHAR(45) NOT NULL,
+    post_id INT NOT NULL,
+    PRIMARY KEY (id),  
+    FOREIGN KEY (user_username) REFERENCES user (username),
+    FOREIGN KEY (post_id) REFERENCES post (id)
+);
+
 CREATE TABLE reply (
   id INT NOT NULL AUTO_INCREMENT,
   content VARCHAR(45) NOT NULL,
@@ -30,7 +39,4 @@ CREATE TABLE reply (
   FOREIGN KEY (post_id) REFERENCES post (id)
 );
 
-insert into user (username, email, name, password, icon) values(
-'everynite', 'chalitameneguelli14@gmail.com', 'Davi', '123', 'katara');
-
-insert into post (content, user_username, )
+insert into user (username, email, name, password, icon) values('everynite', 'chalitameneguelli14@gmail.com', 'Davi', '123', 'katara');

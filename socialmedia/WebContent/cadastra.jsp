@@ -22,12 +22,13 @@
 		<h2>Escolha seu avatar:</h2>
 		<div class="container avatares">
 			<input type="radio" name="icon" value="katara" id="katara" checked>
-			<label for="katara" class="katara"></label> <input type="radio"
-				name="icon" value="aang" id="aang"> <label for="aang"
-				class="aang"></label> <input type="radio" name="icon" value="toph"
-				id="toph"> <label for="toph" class="toph"></label> <input
-				type="radio" name="icon" value="zuko" id="zuko"> <label
-				for="zuko" class="zuko"></label>
+			<label for="katara" class="katara"></label> 
+			<input type="radio" name="icon" value="aang" id="aang"> 
+			<label for="aang" class="aang"></label> 
+			<input type="radio" name="icon" value="toph" id="toph"> 
+			<label for="toph" class="toph"></label> 
+			<input type="radio" name="icon" value="zuko" id="zuko"> 
+			<label for="zuko" class="zuko"></label>
 		</div>
 		<div class="form-button-margin">
 			<input type="submit" value="confirmar" class="btn btn--small">

@@ -28,14 +28,14 @@ public class LikePostServlet extends HttpServlet {
 
 		int id = Integer.parseInt(req.getParameter("post"));
 		Post post = postDao.get(id);
-
+		
 		if (usuario != null && post != null) {
 
-			if (usuario.getLikedPostById(id) == null) {
-				usuario.addLikedPost(post);
+			if (!postDao.verificaSeUsuarioCurtiu(usuario, id)) {
+				userDao.addLikedPost(usuario.getUsername(), id);				
 
 			} else {
-				usuario.removeLikedPost(post);
+				userDao.removeLikedPost(usuario.getUsername(), id);
 			}
 		}
 

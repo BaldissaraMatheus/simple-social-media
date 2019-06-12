@@ -11,9 +11,8 @@ import br.com.uff.socialmedia.controller.connector.Connector;
 import br.com.uff.socialmedia.model.Post;
 import br.com.uff.socialmedia.model.User;
 
-public class PostDao implements Dao<Post> {
+public class PostDao {
 
-	@Override
 	public void save(Post post) {
 		Connection con = Connector.getConnection();
 		
@@ -32,7 +31,6 @@ public class PostDao implements Dao<Post> {
 		
 	}
 	
-	@Override
 	public void delete(int id) {
 
 		Connection con = Connector.getConnection();
@@ -72,7 +70,6 @@ public class PostDao implements Dao<Post> {
 	}
 
 	public Post get(int id) {
-
 		Connection con = Connector.getConnection();
 		UserDao userDao = new UserDao();
 		Post post = null;
@@ -100,23 +97,22 @@ public class PostDao implements Dao<Post> {
 		return post;	
 		
 	}
-		
 	
 	public List<Post> getAll() {
 		Connection con = Connector.getConnection();
 		UserDao userDao = new UserDao();
 		List<Post> posts = new ArrayList<Post>();
 		
-
 		try {
-			PreparedStatement st = con.prepareStatement("select * from post");
-			ResultSet rs = st.executeQuery();
+			PreparedStatement ps = con.prepareStatement("select * from post");
+			ResultSet rs = ps.executeQuery();
 			
 			while (rs.next()) {
 				User user = new User();
 				user = userDao.getByUsername(rs.getString("user_username"));
 				
 				Post post = new Post();
+				post.setId(rs.getInt("id"));
 				post.setOwner(user);
 				post.setContent(rs.getString("content"));
 				posts.add(post);
@@ -132,4 +128,51 @@ public class PostDao implements Dao<Post> {
 		return posts;	
 	}
 
+	public List<Post> getLikedPosts(User user) {
+		Connection con = Connector.getConnection();
+		List<Post> posts = new ArrayList<Post>();
+		
+		try {
+			PreparedStatement ps = con.prepareStatement("select * from likedPost where user_username = ?");
+			ps.setString(1, user.getUsername());
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				Post post = new Post();
+				post = get(Integer.parseInt(rs.getString("post_id")));
+				posts.add(post);
+				con.close();
+			}
+			
+			con.close();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return posts;	
+	}
+	
+	public boolean verificaSeUsuarioCurtiu(User user, int idPost) {
+		Connection con = Connector.getConnection();
+		
+		try {
+			PreparedStatement ps = con.prepareStatement("select * from likedPost where user_username = ? and post_id = ?");
+			ps.setString(1, user.getUsername());
+			ps.setInt(2, idPost);
+			ResultSet rs = ps.executeQuery();
+
+			con.close();
+			
+			return (rs.next());
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return false;
+	}
 }

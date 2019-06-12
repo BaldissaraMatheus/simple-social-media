@@ -7,7 +7,6 @@ import br.com.uff.socialmedia.model.User;
 public class UserLogin {
 	
 	public static User Login(String email, String password) {
-		Connection con;
 		UserDao dao = new UserDao();
 		User usuario = dao.getByEmail(email);
 

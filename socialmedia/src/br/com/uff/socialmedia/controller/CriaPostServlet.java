@@ -12,7 +12,6 @@ import javax.servlet.http.HttpSession;
 import br.com.uff.socialmedia.model.Post;
 import br.com.uff.socialmedia.model.User;
 import br.com.uff.socialmedia.model.dao.PostDao;
-import br.com.uff.socialmedia.model.dao.UserDao;
 
 @WebServlet("/criaPost")
 public class CriaPostServlet extends HttpServlet {
@@ -21,14 +20,12 @@ public class CriaPostServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		HttpSession sessao = req.getSession();
-		UserDao userDao = new UserDao();
 		PostDao postDao = new PostDao();
 
 		if (sessao.getAttribute("usuario") != null && !req.getParameter("content").equals("")) {
 			User usuario = (User) sessao.getAttribute("usuario");
 			Post post = usuario.createPost((String) req.getParameter("content"));
 			postDao.save(post);
-			userDao.update(usuario.getEmail(), usuario);
 		}
 
 		res.sendRedirect(URL_BASE + "/dashboard");

@@ -11,9 +11,8 @@ import java.util.List;
 import br.com.uff.socialmedia.controller.connector.Connector;
 import br.com.uff.socialmedia.model.User;
 
-public class UserDao implements Dao<User> {
+public class UserDao {
 	
-	@Override
 	public void save(User user) {
 		Connection con = Connector.getConnection();
 		
@@ -35,7 +34,6 @@ public class UserDao implements Dao<User> {
 		
 	}
 
-	@Override
 	public void delete(int id) {
 		Connection con = Connector.getConnection();
 
@@ -68,6 +66,7 @@ public class UserDao implements Dao<User> {
 				usuario.setName(rs.getString("name"));
 				usuario.setPassword(rs.getString("password"));
 				usuario.setIcon(rs.getString("icon"));
+				
 				con.close();
 			}
 			
@@ -84,7 +83,7 @@ public class UserDao implements Dao<User> {
 		User usuario = null;
 
 		try {
-			PreparedStatement st = con.prepareStatement("select * from user where username=?");
+			PreparedStatement st = con.prepareStatement("select * from user where username = ?");
 			st.setString(1, username);
 			ResultSet rs = st.executeQuery();
 			
@@ -95,6 +94,7 @@ public class UserDao implements Dao<User> {
 				usuario.setName(rs.getString("name"));
 				usuario.setPassword(rs.getString("password"));
 				usuario.setIcon(rs.getString("icon"));
+				
 				con.close();
 			}
 			
@@ -152,10 +152,10 @@ public class UserDao implements Dao<User> {
 			st.executeUpdate();
 
 			con.close();
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-
 		}
 		
 		return usuario;
@@ -175,4 +175,40 @@ public class UserDao implements Dao<User> {
 			e.printStackTrace();
 		}
 	}
+	
+	public void addLikedPost(String username, int postId) {
+		Connection con = Connector.getConnection();
+		
+		try {
+			PreparedStatement st = con.prepareStatement("insert into likedPost(user_username, post_id) values(?, ?)");
+			st.setString(1, username);
+			st.setInt(2, postId);
+			st.executeUpdate();
+
+			con.close();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	public void removeLikedPost(String username, int postId) {
+		Connection con = Connector.getConnection();
+		
+		try {
+			PreparedStatement st = con.prepareStatement("delete from likedPost where user_username = ? and post_id = ?");
+			st.setString(1, username);
+			st.setInt(2, postId);
+			st.executeUpdate();
+
+			con.close();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 }
