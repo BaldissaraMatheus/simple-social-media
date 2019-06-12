@@ -71,7 +71,8 @@ public class User {
 	}
 
 	public Reply createReply(Post origin, String content) {
-		Reply reply = new Reply(origin, content);
+		Reply reply = new Reply(origin);
+		reply.setContent(content);
 		reply.setOwner(this);
 		origin.addReply(reply);
 		return reply;

@@ -12,8 +12,8 @@ public class Reply extends Post {
 		this.origin = origin;
 	}
 
-	public Reply(Post post, String content) {
-		super(content);
+	public Reply(Post post) {
+		super();
 		this.setOrigin(post);
 	}
 

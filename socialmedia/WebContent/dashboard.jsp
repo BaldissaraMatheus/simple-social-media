@@ -86,7 +86,7 @@
 						</form>
 					</div>
 				</div>
-				<% for (Reply reply : post.getReplies()) { %>
+				<% for (Reply reply : dao.getReplies(post)) { %>
 				<div class="post">
 					<div class="post-content">
 						<div

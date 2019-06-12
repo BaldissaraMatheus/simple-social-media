@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import br.com.uff.socialmedia.model.Post;
+import br.com.uff.socialmedia.model.Reply;
 import br.com.uff.socialmedia.model.User;
 import br.com.uff.socialmedia.model.dao.PostDao;
-import br.com.uff.socialmedia.model.dao.UserDao;
 
 @WebServlet("/criaReply")
 public class CriaReplyServlet extends HttpServlet {
@@ -21,17 +21,17 @@ public class CriaReplyServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		HttpSession sessao = req.getSession();
-		UserDao userDao = new UserDao();
 		PostDao postDao = new PostDao();
-
+		int id = Integer.parseInt(req.getParameter("postId"));
+		
 		if (sessao.getAttribute("usuario") != null && !req.getParameter("content").equals("")) {
 			User usuario = (User) sessao.getAttribute("usuario");
-			Post origin = postDao.get(Integer.parseInt(req.getParameter("postId")));
+			
+			Post origin = postDao.get(id);
 			String replyContent = req.getParameter("content");
 
-			usuario.createReply(origin, replyContent);
-			postDao.update(origin.getId(), origin);
-			userDao.update(usuario.getEmail(), usuario);
+			Reply reply = usuario.createReply(origin, replyContent);
+			postDao.createReply(reply);
 		}
 
 		res.sendRedirect(URL_BASE + "/dashboard");

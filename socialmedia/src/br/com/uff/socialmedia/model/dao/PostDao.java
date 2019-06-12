@@ -9,6 +9,7 @@ import java.util.List;
 
 import br.com.uff.socialmedia.controller.connector.Connector;
 import br.com.uff.socialmedia.model.Post;
+import br.com.uff.socialmedia.model.Reply;
 import br.com.uff.socialmedia.model.User;
 
 public class PostDao {
@@ -84,6 +85,7 @@ public class PostDao {
 				user = userDao.getByUsername(rs.getString("user_username"));
 				
 				post = new Post();
+				post.setId(rs.getInt("id"));
 				post.setOwner(user);
 				post.setContent(rs.getString("content"));
 				con.close();
@@ -174,5 +176,53 @@ public class PostDao {
 		}
 
 		return false;
+	}
+
+	public void createReply(Reply reply) {
+		Connection con = Connector.getConnection();
+		
+		try {
+			PreparedStatement st = con.prepareStatement("insert into reply(user_username, post_id, content) values(?, ?, ?)");
+			st.setString(1, reply.getOwner().getUsername());
+			st.setInt(2, reply.getOrigin().getId());
+			st.setString(3, reply.getContent());
+			st.executeUpdate();
+
+			con.close();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public List<Reply> getReplies(Post post) {
+		Connection con = Connector.getConnection();
+		UserDao userDao = new UserDao();
+		List<Reply> replies = new ArrayList<Reply>();
+		
+		try {
+			PreparedStatement st = con.prepareStatement("select * from reply where post_id = ?");
+			st.setInt(1, post.getId());
+			ResultSet rs = st.executeQuery();
+
+			while (rs.next()) {
+				Reply reply = new Reply(post);
+				reply.setId(rs.getInt("id"));
+				reply.setContent(rs.getString("content"));
+				reply.setOwner(userDao.getByUsername(rs.getString("user_username")));
+				
+				replies.add(reply);
+			}
+			
+			con.close();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return replies;
 	}
 }
