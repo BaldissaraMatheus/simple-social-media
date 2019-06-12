@@ -10,13 +10,17 @@
     <link rel="shortcut icon" href="img/favicon.ico" />
 </head>
 
-<body class="image-background">
+<body>
     <main class="container">
+        <a class="btn btn--small" href="login">Voltar</a>
         <h1>Redefina sua senha</h1>
+        	<% if(request.getAttribute("err") != null) { %>
+			<h2><% out.println(request.getAttribute("err")); %></h2>
+			<% } %>
         <form action="realizaRedefinicaoSenha" method="POST">
             <p>Digite seu e-mail.</p>
             <input type="text" name="email" placeholder="E-mail">
-            <input type="password" name="novasenha" placeholder="Nova senha">
+            <input type="password" name="novaSenha" placeholder="Nova senha">
             <input type="submit" value="Confirmar" class="btn btn--small">
         </form>
     </main>

@@ -4,6 +4,12 @@ function toggleReplyContainer(el) {
 }
 
 function toggleIconStyle(el) {
-    el.classList.toggle('far');
-    el.classList.toggle('fas');
+    if (el.classList.contains('fas') && !el.classList.contains('fa-comment-alt')) {
+    	el.classList.toggle('fa-heart');
+    	el.classList.toggle('fa-heart-broken');
+    
+    } else {
+        el.classList.toggle('far');
+        el.classList.toggle('fas');
+    } 
 }

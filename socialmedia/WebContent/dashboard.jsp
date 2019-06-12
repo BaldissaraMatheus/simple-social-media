@@ -28,7 +28,7 @@
 <script src="assets/js/app.js" type="text/javascript"></script>
 </head>
 
-<body>
+<body class="image-background">
 	<nav class="navbar">
 		<a class="active" href="logout">Sair</a>
 	</nav>
@@ -46,7 +46,7 @@
 			<div class="post-content">
 				<div class="user-icon"></div>
 				<form action="criaPost" method="GET" class="create-post-form">
-					<textarea name="content"></textarea>
+					<textarea name="content" placeholder="Programar na UFF é o maior barato!"></textarea>
 					<input type="submit" value="Enviar" class="btn btn--small">
 				</form>
 			</div>
@@ -71,7 +71,7 @@
 				</p>
 			</div>
 			<div class="action-bar">
-				<a class="btn fa<% if (dao.verificaSeUsuarioCurtiu(usuario, post.getId())) { out.println("s"); } else { out.println("r"); } %> fa-grin-hearts" onclick="toggleIconStyle(this)" href="/socialmedia/likePost?post=<% out.println(post.getId()); %>"></a>
+				<a class="btn fa<% if (dao.verificaSeUsuarioCurtiu(usuario, post.getId())) { out.println("s"); } else { out.println("r"); } %> fa-heart" onclick="toggleIconStyle(this)" href="/socialmedia/likePost?post=<% out.println(post.getId()); %>"></a>
 				<button class="btn far fa-comment-alt" id="reply-btn" onclick="toggleReplyContainer(this); toggleIconStyle(this)"></button>
 			</div>
 			<div class="replies">
@@ -109,6 +109,7 @@
 				<% } %>
 			</div>
 		</div>
+		<br>
 		<% } %>
 	</div>
 	</main>

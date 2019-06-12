@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"
+	
+%>
 <html>
 
 <head>
@@ -10,9 +12,12 @@
 <link rel="stylesheet" href="assets/stylesheets/cadastro.css">
 </head>
 
-<body class="image-background">
+<body>
 	<main class="container main-container">
 	<h1>Faça seu cadastro!</h1>
+	<% if(request.getAttribute("err") != null) { %>
+	<h2><% out.println(request.getAttribute("err")); %></h2>
+	<% } %>
 	<form action="realizaCadastro" method="POST">
 		<input type="email" name="email" placeholder="Email"> <input
 			type="text" name="name" placeholder="Nome completo"> <input

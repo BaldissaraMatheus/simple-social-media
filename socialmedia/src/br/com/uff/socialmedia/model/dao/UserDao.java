@@ -34,12 +34,12 @@ public class UserDao {
 		
 	}
 
-	public void delete(int id) {
+	public void delete(String username) {
 		Connection con = Connector.getConnection();
 
 		try {
-			PreparedStatement st = con.prepareStatement("delete from user where id=?");
-			st.setInt(1, id);
+			PreparedStatement st = con.prepareStatement("delete from user where username=?");
+			st.setString(1, username);
 			st.executeUpdate();	
 			
 			con.close();
@@ -139,16 +139,13 @@ public class UserDao {
 		Connection con = Connector.getConnection();
 		
 		try {
-			PreparedStatement st1 = con.prepareStatement("delete from user where email=?");
-			st1.setString(1, email);
-			st1.executeUpdate();
+			PreparedStatement st = con.prepareStatement("update user set(username, name, password, icon) values(?, ?, ?, ?, ?) where email = ?");
 			
-			PreparedStatement st = con.prepareStatement("insert into user(username, email, name, password, icon) values(?, ?, ?, ?, ?)");
 			st.setString(1, usuario.getUsername());
-			st.setString(2, usuario.getEmail());
-			st.setString(3, usuario.getName());
-			st.setString(4, usuario.getPassword());
-			st.setString(5, usuario.getIcon().getNome());
+			st.setString(2, usuario.getName());
+			st.setString(3, usuario.getPassword());
+			st.setString(4, usuario.getIcon().getNome());
+			st.setString(5, email);
 			st.executeUpdate();
 
 			con.close();

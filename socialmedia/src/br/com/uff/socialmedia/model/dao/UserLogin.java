@@ -1,7 +1,5 @@
 package br.com.uff.socialmedia.model.dao;
 
-import java.sql.Connection;
-
 import br.com.uff.socialmedia.model.User;
 
 public class UserLogin {
@@ -10,11 +8,7 @@ public class UserLogin {
 		UserDao dao = new UserDao();
 		User usuario = dao.getByEmail(email);
 
-		if (usuario != null && usuario.getPassword().equals(password)) {
-			return usuario;
-		}
-
-		return null;
+		return (usuario != null && usuario.getPassword().equals(password)) ? usuario : null;
 	}
 
 }
