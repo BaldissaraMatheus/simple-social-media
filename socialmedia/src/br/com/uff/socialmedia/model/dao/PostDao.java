@@ -13,8 +13,6 @@ import br.com.uff.socialmedia.model.User;
 
 public class PostDao implements Dao<Post> {
 
-	private static List<Post> posts = new ArrayList<Post>();
-
 	@Override
 	public void save(Post post) {
 		Connection con = Connector.getConnection();
@@ -36,6 +34,7 @@ public class PostDao implements Dao<Post> {
 	
 	@Override
 	public void delete(int id) {
+
 		Connection con = Connector.getConnection();
 
 		try {
@@ -71,8 +70,9 @@ public class PostDao implements Dao<Post> {
 			e.printStackTrace();
 		}	
 	}
-	
+
 	public Post get(int id) {
+
 		Connection con = Connector.getConnection();
 		UserDao userDao = new UserDao();
 		Post post = null;
@@ -131,5 +131,5 @@ public class PostDao implements Dao<Post> {
 		
 		return posts;	
 	}
-	
+
 }

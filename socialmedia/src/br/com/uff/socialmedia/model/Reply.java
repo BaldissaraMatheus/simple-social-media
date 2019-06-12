@@ -3,7 +3,7 @@ package br.com.uff.socialmedia.model;
 public class Reply extends Post {
 
 	private Post origin;
-	
+
 	public Post getOrigin() {
 		return origin;
 	}

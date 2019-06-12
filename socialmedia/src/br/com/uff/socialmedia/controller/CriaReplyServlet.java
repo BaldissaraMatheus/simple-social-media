@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import br.com.uff.socialmedia.model.Post;
-import br.com.uff.socialmedia.model.Reply;
 import br.com.uff.socialmedia.model.User;
 import br.com.uff.socialmedia.model.dao.PostDao;
 import br.com.uff.socialmedia.model.dao.UserDao;
@@ -24,17 +23,17 @@ public class CriaReplyServlet extends HttpServlet {
 		HttpSession sessao = req.getSession();
 		UserDao userDao = new UserDao();
 		PostDao postDao = new PostDao();
-		
+
 		if (sessao.getAttribute("usuario") != null && !req.getParameter("content").equals("")) {
 			User usuario = (User) sessao.getAttribute("usuario");
 			Post origin = postDao.get(Integer.parseInt(req.getParameter("postId")));
 			String replyContent = req.getParameter("content");
-			
+
 			usuario.createReply(origin, replyContent);
 			postDao.update(origin.getId(), origin);
 			userDao.update(usuario.getEmail(), usuario);
 		}
-		
+
 		res.sendRedirect(URL_BASE + "/dashboard");
 	}
 }

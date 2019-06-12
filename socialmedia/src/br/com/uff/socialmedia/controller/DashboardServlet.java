@@ -16,17 +16,17 @@ import br.com.uff.socialmedia.model.dao.PostDao;
 public class DashboardServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String URL_BASE = "/socialmedia";
-       
+
 	protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		HttpSession sessao = req.getSession();
 		PostDao dao = new PostDao();
-		
+
 		if (sessao.getAttribute("usuario") != null) {
 			req.setAttribute("posts", dao.getAll());
-						
+
 			RequestDispatcher rd = req.getRequestDispatcher("/dashboard.jsp");
 			rd.forward(req, res);
-			
+
 		} else {
 			res.sendRedirect(URL_BASE + "/login");
 		}

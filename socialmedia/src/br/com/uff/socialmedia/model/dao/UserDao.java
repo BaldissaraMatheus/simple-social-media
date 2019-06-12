@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import br.com.uff.socialmedia.controller.connector.Connector;
 import br.com.uff.socialmedia.model.User;
 
@@ -103,8 +104,9 @@ public class UserDao implements Dao<User> {
 		}
 		
 		return usuario;	
+
 	}
-	
+
 	public List<User> getAll() {
 		Connection con = Connector.getConnection();
 		List<User> usuarios = new ArrayList<User>();
@@ -131,8 +133,9 @@ public class UserDao implements Dao<User> {
 		
 		return usuarios;	
 	}
-	
+
 	public User update(String email, User usuario) {
+
 		Connection con = Connector.getConnection();
 		
 		try {
@@ -152,8 +155,24 @@ public class UserDao implements Dao<User> {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+
 		}
 		
 		return usuario;
+	}
+	
+	public void resetPassword(User usuario) {
+		Connection con = Connector.getConnection();
+		PreparedStatement st;
+		try {
+			st = con.prepareStatement("update user set password=? where email=?");
+			st.setString(2, usuario.getEmail());
+			st.setString(1, usuario.getPassword());
+			st.executeUpdate();
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

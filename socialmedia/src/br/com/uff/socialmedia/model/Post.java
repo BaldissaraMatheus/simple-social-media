@@ -15,12 +15,12 @@ public class Post {
 	public Post() {
 		this.replies = new ArrayList<Reply>();
 	}
-	
+
 	public Post(String content) {
 		this.content = content;
 		this.replies = new ArrayList<Reply>();
 	}
-	
+
 	public int getId() {
 		return id;
 	}
@@ -72,5 +72,5 @@ public class Post {
 	public void addReply(Reply reply) {
 		this.replies.add(reply);
 	}
-	
+
 }

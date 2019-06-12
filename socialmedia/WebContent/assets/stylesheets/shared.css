@@ -21,6 +21,12 @@
     color: white;
 }
 
+.btn-excluir{
+	display: inline-block;
+	padding: 8px 8px 8px 32px;
+	background: url(assets/img/excluir.png);
+}
+
 body {
     background: #16202a;
 }
@@ -147,7 +153,11 @@ input:focus {
 }
 
 .image-background {
+<<<<<<< HEAD
+    background-image: url('../img/aang_background.jpg') !important;
+=======
     background-image: url('../img/aang_background.jpg');
+>>>>>>> branch 'master' of https://github.com/BaldissaraMatheus/simple-social-media.git
     background-size: cover;
 }
 

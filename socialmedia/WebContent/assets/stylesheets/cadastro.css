@@ -1,7 +1,13 @@
 .main-container {
+<<<<<<< HEAD
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 45px;
+=======
     width: 100%;
     max-width: 1000px;
     margin-top: 45px;
+>>>>>>> branch 'master' of https://github.com/BaldissaraMatheus/simple-social-media.git
 }
 
 body {
@@ -14,7 +20,11 @@ form {
 }
 
 input {
+<<<<<<< HEAD
+  margin-bottom: 25px;
+=======
     margin-bottom: 25px;
+>>>>>>> branch 'master' of https://github.com/BaldissaraMatheus/simple-social-media.git
 }
 
 .avatares {
@@ -23,37 +33,73 @@ input {
 }
 
 .avatares>[type=radio] {
+<<<<<<< HEAD
+  position: absolute;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+=======
     position: absolute;
     width: 0;
     height: 0;
     visibility: hidden;
+>>>>>>> branch 'master' of https://github.com/BaldissaraMatheus/simple-social-media.git
 }
 
 .avatares>[type=radio]+label {
+<<<<<<< HEAD
+  display: inline-block;
+  cursor: pointer;
+  display: inline-block;
+  width: 49%;
+  height: 150px;
+  background-size: cover;
+=======
     display: inline-block;
     cursor: pointer;
     display: inline-block;
     width: 49%;
     height: 150px;
     background-size: cover;
+>>>>>>> branch 'master' of https://github.com/BaldissaraMatheus/simple-social-media.git
 }
 
 .avatares>[type=radio]+.katara {
+<<<<<<< HEAD
+  background-image: url('../img/katara.png');
+=======
     background-image: url('../img/katara.png');
+>>>>>>> branch 'master' of https://github.com/BaldissaraMatheus/simple-social-media.git
 }
 
 .avatares>[type=radio]+.aang {
+<<<<<<< HEAD
+  background-image: url('../img/aang.png');
+=======
     background-image: url('../img/aang.png');
+>>>>>>> branch 'master' of https://github.com/BaldissaraMatheus/simple-social-media.git
 }
 
 .avatares>[type=radio]+.toph {
+<<<<<<< HEAD
+  background-image: url('../img/toph.png');
+=======
     background-image: url('../img/toph.png');
+>>>>>>> branch 'master' of https://github.com/BaldissaraMatheus/simple-social-media.git
 }
 
 .avatares>[type=radio]+.zuko {
+<<<<<<< HEAD
+  background-image: url('../img/zuko.png');
+=======
     background-image: url('../img/zuko.png');
+>>>>>>> branch 'master' of https://github.com/BaldissaraMatheus/simple-social-media.git
 }
 
 .avatares>[type=radio]:checked+label {
+<<<<<<< HEAD
+  outline: 3px solid #ffffff;
+=======
     outline: 3px solid #ffffff;
+>>>>>>> branch 'master' of https://github.com/BaldissaraMatheus/simple-social-media.git
 }
