@@ -14,7 +14,7 @@ CREATE TABLE user (
 
 CREATE TABLE post (
     id INT NOT NULL AUTO_INCREMENT,
-    content VARCHAR(45) NOT NULL,
+    content VARCHAR(280) NOT NULL,
     user_username VARCHAR(45) NOT NULL,
     PRIMARY KEY (id),  
     FOREIGN KEY (user_username) REFERENCES user (username)
@@ -31,7 +31,7 @@ CREATE TABLE likedPost (
 
 CREATE TABLE reply (
   id INT NOT NULL AUTO_INCREMENT,
-  content VARCHAR(45) NOT NULL,
+  content VARCHAR(280) NOT NULL,
   user_username VARCHAR(45) NOT NULL,
   post_id INT NOT NULL,
   PRIMARY KEY (id),
@@ -39,4 +39,8 @@ CREATE TABLE reply (
   FOREIGN KEY (post_id) REFERENCES post (id)
 );
 
-insert into user (username, email, name, password, icon) values('everynite', 'chalitameneguelli14@gmail.com', 'Davi', '123', 'katara');
+insert into user (username, email, name, password, icon) values('davi', 'davi@gmail.com', 'Davi', '123', 'katara');
+insert into user (username, email, name, password, icon) values('catherine', 'catherine@gmail.com', 'Catherine', '123', 'aang');
+insert into user (username, email, name, password, icon) values('samir', 'samir@gmail.com', 'Samir', '123', 'toph');
+
+insert into post (id, content, user_username) values(null, 'Bom dia! Que todos tenham uma semana de luz', 'baldissara');
