@@ -43,4 +43,4 @@ insert into user (username, email, name, password, icon) values('davi', 'davi@gm
 insert into user (username, email, name, password, icon) values('catherine', 'catherine@gmail.com', 'Catherine', '123', 'aang');
 insert into user (username, email, name, password, icon) values('samir', 'samir@gmail.com', 'Samir', '123', 'toph');
 
-insert into post (id, content, user_username) values(null, 'Bom dia! Que todos tenham uma semana de luz', 'baldissara');
+insert into post (content, user_username) values('Bom dia! Que todos tenham uma semana de luz', 'samir');
