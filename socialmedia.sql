@@ -44,3 +44,5 @@ insert into user (username, email, name, password, icon) values('catherine', 'ca
 insert into user (username, email, name, password, icon) values('samir', 'samir@gmail.com', 'Samir', '123', 'toph');
 
 insert into post (content, user_username) values('Bom dia! Que todos tenham uma semana de luz', 'samir');
+insert into post (content, user_username) values('Ouvindo aquele pagodao no churras', 'davi');
+insert into post (content, user_username) values('oi gentee', 'catherine');
