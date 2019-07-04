@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"
 	
 %>
 <html>
@@ -14,14 +14,14 @@
 
 <body>
 	<main class="container main-container">
-	<h1>Faça seu cadastro!</h1>
+	<h1>FaÃ§a seu cadastro!</h1>
 	<% if(request.getAttribute("err") != null) { %>
 	<h2><% out.println(request.getAttribute("err")); %></h2>
 	<% } %>
 	<form action="realizaCadastro" method="POST">
 		<input type="email" name="email" placeholder="Email"> <input
 			type="text" name="name" placeholder="Nome completo"> <input
-			type="text" name="username" placeholder="Nome de usuário"> <input
+			type="text" name="username" placeholder="Nome de usuÃ¡rio"> <input
 			type="password" name="password" placeholder="Senha">
 
 		<h2>Escolha seu avatar:</h2>
